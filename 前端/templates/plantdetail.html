@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8"><link rel="icon" href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>incubator details</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/static/css/incubator/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/all.css" rel="stylesheet">
+    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="/static/css/incubator.css" rel="stylesheet">
+    <link href="/static/css/oldplant.css" rel="stylesheet">
+    <link href="/static/css/bbs-sell.css" rel="stylesheet">
+    <link href="/static/css/incubator/navbar.css" rel="stylesheet">
+    <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
+
+
+
+
+
+    <noscript>
+        &lt;link rel="stylesheet" href="/static/css/incubator/noscript.css"/&gt;
+    </noscript>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body class="bj">
+
+
+<div class="col-md-12 title-lead row">
+            <ul class="col-md-4">
+                <li id="title-logo"><a id="logo" href="/login">智药</a></li>
+                <li class="tile-link" style="margin-left: 80px;"><a href="/login">主页</a></li>
+                <li class="tile-link"><a >产品</a></li>
+                <li class="tile-link"><a href="/showplant">药材</a></li>
+            </ul>
+
+            <div class="col-md-4 top-search">
+                <input type="text" >
+                <button class="btn btn-default">搜索</button>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 top-login">
+
+
+                {% if request.session.is_login %}
+
+                    <div class="userimg-sm">
+                        <a href="/incubator">
+                        <img src="/static/img/personInfo/{{ request.session.userimg }}">
+                        </a>
+                    </div>
+                        <h3 style="margin-left: 100px">{{ request.session.username }}</h3>
+                        <button class="btn btn-lg btn-danger" style="margin-top: -60px;margin-left: 100px" onclick="window.location='/logout/'">注销</button>
+                {% endif %}
+                {% if not request.session.is_login %}
+                    <div class="userimg-sm">
+                        <img src="/static/img/wdl.jpg">
+                    </div>
+                    <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">登录</button>
+                {% endif %}
+
+            </div>
+        </div>
+<div style="margin-left: 50px;margin-right: 50px;width: auto">
+    <div class="col-md-12 box-detail-title">
+<h1 class="col-md-4">杂草一号</h1>
+<button class="col-md-offset-6 col-md-2 btn btn-info" style="margin-top: 20px; height: 50px" onclick="window.location.href='/showplant'">返回</button>
+</div>
+    <div id="box-detail" class="col-md-12" >
+
+    <div id="main" >
+        <div class="col-md-12 container marketing " id="viewChart" style="height: 1100px">
+
+
+                <div class="col-md-12 averinf" style="margin-top: 20px">
+
+                 <h3 class="col-md-12">植物简单信息</h3>
+                 <img src="/static/img/1.jpg" class="col-md-3 img-thumbnail">
+                <div class="col-md-offset-1 col-md-7">
+                  <div class="plantname">
+                    <h1 >多肉</h1>
+                    </div>
+                    <h4>种植人：沈药农</h4>
+                    <h4>植物评分：7.3 <span class="glyphicon glyphicon-info-sign" style="color:red;"></span></h4>
+                    <h4>植物简介：</h4>
+                    <div class="planteven">
+                        <p>
+                                多肉植物喜通风，需要充足的光照，为避免黑腐，宜控水不宜过度浇水。
+                        </p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-12 detinf" >
+                <h3 class="col-md-12">植物详细生长状态</h3>
+                    <div id="szview"  style="min-width:400px;height:400px"></div>
+
+                </div>
+
+            <!--箱内属性展示  简单表示 -->
+
+            <!-- /.row -->
+        </div>
+
+    </div>
+
+</div>
+</div>
+<div class="col-md-12 page-foot">
+        <div class="col-md-12 page-foot-main">
+            <p class="col-md-offset-2 col-md-8"> 镜像:日本  教育网  科技网  呼叫热线：4008-100-300  服务邮箱：kf@people.cn  违法和不良信息举报电话：010-65363263  举报邮箱：jubao@people.cn</p>
+            <p class="col-md-offset-2 col-md-8"> 互联网新闻信息服务许可证10120170001 | 增值电信业务经营许可证B1-20060139 </p>
+            <p class="col-md-offset-2 col-md-8"> 信息网络传播视听节目许可证0104065 | 广播电视节目制作经营许可证（广媒）字第172号 </p>
+            <p class="col-md-offset-2 col-md-8"> 公司地址：花果山福地----水帘洞洞天</p>
+        </div>
+        <div class="col-md-12 page-foot-bottom">
+            <p class="col-md-offset-2 col-md-8">网络文化经营许可证 京网文[2017]9786-1126号 | 网络出版服务许可证（京）字258号 | 京ICP证000006号 | 京公网安备11000002000008号 </p>
+        </div>
+    </div>
+<script>
+    var chart = Highcharts.chart('szview', {
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: '生长状态与标准对比'
+    },
+    subtitle: {
+        text: '数据仅供参考'
+    },
+    xAxis: {
+        categories: ['一月', '二月', '三月', '四月', '五月', '六月',
+                     '七月', '八月', '九月', '十月', '十一月', '十二月']
+    },
+    yAxis: {
+        title: {
+            text: '评分'
+        },
+        labels: {
+            formatter: function () {
+                return this.value + '°';
+            }
+        }
+    },
+    tooltip: {
+        crosshairs: true,
+        shared: true
+    },
+    plotOptions: {
+        spline: {
+            marker: {
+                radius: 4,
+                lineColor: '#666666',
+                lineWidth: 1
+            }
+        }
+    },
+    series: [{
+        name: '标准',
+        marker: {
+            symbol: 'square'
+        },
+        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
+            y: 26.5,
+            marker: {
+                symbol: 'url(https://www.highcharts.com/demo/gfx/sun.png)'
+            }
+        }, 23.3, 18.3, 13.9, 9.6]
+    }, {
+        name: '实际',
+        marker: {
+            symbol: 'diamond'
+        },
+        data: [{
+            y: 3.9,
+            marker: {
+                symbol: 'url(https://www.highcharts.com/demo/gfx/snow.png)'
+            }
+        }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+    }]
+});
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

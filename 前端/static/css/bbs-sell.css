@@ -1,0 +1,27 @@
+.bbs-right{
+
+	height: 800px;
+	border :1px solid lightslategray;
+
+	border-radius: 5px;
+	 box-shadow:5px 5px 2px #888888;
+}
+.averinf img{
+	height: 300px;
+}
+.plantname{
+    border-bottom: 5px solid lightblue;
+    border-radius: 2px;
+    width: 300px;
+}
+.plantname h1{
+    color: darkgreen;
+    text-align: center;
+}
+
+.planteven{
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+    padding: 10px;
+	height: 120px;
+}

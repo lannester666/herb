@@ -1,0 +1,412 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>incubator details</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/static/css/incubator/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/all.css" rel="stylesheet">
+    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="/static/css/incubator.css" rel="stylesheet">
+    <link href="/static/css/oldplant.css" rel="stylesheet">
+    <link href="/static/css/incubator/navbar.css" rel="stylesheet">
+    <script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/js/moment-with-locales.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+
+
+
+
+
+    <noscript>
+        &lt;link rel="stylesheet" href="/static/css/incubator/noscript.css"/&gt;
+    </noscript>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body class="bj">
+
+
+<div class="col-md-12 title-lead row">
+            <ul class="col-md-4">
+                <li id="title-logo"><a id="logo" href="/login">智药</a></li>
+                <li class="tile-link" style="margin-left: 80px;"><a href="/login">主页</a></li>
+                <li class="tile-link"><a >产品</a></li>
+                <li class="tile-link"><a href="/showplant">药材</a></li>
+            </ul>
+
+            <div class="col-md-4 top-search">
+                <input type="text" >
+                <button class="btn btn-default">搜索</button>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 top-login">
+
+
+                {% if request.session.is_login %}
+
+                    <div class="userimg-sm">
+                        <a href="/incubator">
+                        <img src="/static/img/personInfo/{{ request.session.userimg }}">
+                        </a>
+                    </div>
+                        <h3 style="margin-left: 100px">{{ request.session.username }}</h3>
+                        <button class="btn btn-lg btn-danger" style="margin-top: -40px;margin-left: 100px" onclick="window.location='/logout/'">注销</button>
+                {% endif %}
+                {% if not request.session.is_login %}
+                    <div class="userimg-sm">
+                        <img src="/static/img/wdl.jpg">
+                    </div>
+                    <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">登录</button>
+                {% endif %}
+
+            </div>
+        </div>
+<div style="margin-left: 50px;margin-right: 50px;width: auto">
+    <div class="col-md-12 box-detail-title">
+<h1 class="col-md-4">TC-001 培养箱往期数据</h1>
+</div>
+    <div id="box-detail" class="col-md-12">
+
+    <div id="main">
+        <div class="col-md-12 container marketing " id="viewChart">
+
+                <div class="row" style="margin-top: 20px">
+                    <div class='col-md-offset-1 col-md-3'>
+                        <div class="form-group">
+                            <label>开始时间：</label>
+                            <!--指定 date标记-->
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-3'>
+                        <div class="form-group">
+                            <label>结束时间：</label>
+                            <!--指定 date标记-->
+                            <div class='input-group date' id='datetimepicker2'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="col-md-offset-2 col-md-1 btn btn-lg btn-info" style="margin-top: 20px">查询</button>
+                </div>
+                <div class="col-md-12 averinf">
+
+                 <h3 class="col-md-12">总体平均数据</h3>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>植物种类</th>
+                      <th>总体培育时长</th>
+                      <th>开始时间</th>
+                      <th>结束时间</th>
+                      <th>平均温度</th>
+                      <th>平均湿度</th>
+                      <th>平均关照</th>
+                      <th>平均气压</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>人参</td>
+                      <td>321313</td>
+                      <td>2019-07-01</td>
+                      <td>2019-08-01</td>
+                      <td>46</td>
+                      <td>74275</td>
+                      <td>5757</td>
+                      <td>21262</td>
+                    </tr>
+                      <tr>
+                          <td>当归</td>
+                          <td>321313</td>
+                          <td>2019-07-01</td>
+                          <td>2019-08-01</td>
+                          <td>46</td>
+                          <td>74275</td>
+                          <td>5757</td>
+                          <td>21262</td>
+                        </tr>
+                  </tbody>
+                </table>
+                </div>
+                <div class="col-md-12 detinf">
+                <h3 class="col-md-12">每日详细数据</h3>
+                <table class="table table-hover old-table">
+                  <thead>
+                    <tr>
+                      <th>植物</th>
+                      <th>日期</th>
+                      <th>日均温度</th>
+                      <th>日均湿度</th>
+                      <th>日均关照</th>
+                      <th>日均气压</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/incubatorDetail/i01">人参</a></td>
+                      <td> 2019-07-01</td>
+                      <td>36</td>
+                      <td>282</td>
+                      <td>5758</td>
+                      <td>4271</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+
+            <!--箱内属性展示  简单表示 -->
+
+            <!-- /.row -->
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="col-md-12 page-foot">
+        <div class="col-md-12 page-foot-main">
+            <p class="col-md-offset-2 col-md-8"> 镜像:日本  教育网  科技网  呼叫热线：4008-100-300  服务邮箱：kf@people.cn  违法和不良信息举报电话：010-65363263  举报邮箱：jubao@people.cn</p>
+            <p class="col-md-offset-2 col-md-8"> 互联网新闻信息服务许可证10120170001 | 增值电信业务经营许可证B1-20060139 </p>
+            <p class="col-md-offset-2 col-md-8"> 信息网络传播视听节目许可证0104065 | 广播电视节目制作经营许可证（广媒）字第172号 </p>
+            <p class="col-md-offset-2 col-md-8"> 公司地址：花果山福地----水帘洞洞天</p>
+        </div>
+        <div class="col-md-12 page-foot-bottom">
+            <p class="col-md-offset-2 col-md-8">网络文化经营许可证 京网文[2017]9786-1126号 | 网络出版服务许可证（京）字258号 | 京ICP证000006号 | 京公网安备11000002000008号 </p>
+        </div>
+    </div>
+</body>
+<script>
+
+$(function () {
+
+    var picker1 = $('#datetimepicker1').datetimepicker({
+
+        format: 'YYYY-MM-DD',
+
+        locale: moment.locale('zh-cn'),
+
+        //minDate: '2016-7-1'
+
+    });
+
+    var picker2 = $('#datetimepicker2').datetimepicker({
+
+        format: 'YYYY-MM-DD',
+
+        locale: moment.locale('zh-cn')
+
+    });
+
+    //动态设置最小值
+
+    picker1.on('dp.change', function (e) {
+
+        picker2.data('DateTimePicker').minDate(e.date);
+
+    });
+
+    //动态设置最大值
+
+    picker2.on('dp.change', function (e) {
+
+        picker1.data('DateTimePicker').maxDate(e.date);
+
+    });
+
+});
+
+</script>
+</html>

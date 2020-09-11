@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/all.css" />
+		<link rel="stylesheet" href="/static/css/bbs.css" />
+		<script src="/static/js/jquery-3.3.1.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+		<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="/static/js/bbs.js"></script>
+
+	</head>
+
+	<body>
+		<div id="top-container">
+			<!--
+								            	作者：1758522370@qq.com
+								            	时间：2018-10-06
+								            	描述：标头
+								            -->
+			<h2 style="color: transparent;
+								       background-color : black;
+								       text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+								       -webkit-background-clip : text;">智药  zhiyao.com</h2>
+		</div>
+		<nav class="navbar navbar-light " role="navigation" style="background-color: #e3f2fd;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> 智药 </a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">商城</a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								智库 <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">jmeter</a>
+								</li>
+								<li>
+									<a href="#">EJB</a>
+								</li>
+								<li>
+									<a href="#">Jasper Report</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">分离的链接</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">另一个分离的链接</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+                    {% if request.session.is_login %}
+                        <p>欢迎你，{{ request.session.userphone }}</p>
+                    {% endif %}
+                    {% if not request.session.is_login %}
+                    <li>
+						<a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a>
+					</li>
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a>
+					</li>
+                    {% endif %}
+				</ul>
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">搜索</button>
+				</form>
+			</div>
+		</nav>
+		<div id="body-container" class="container" style="margin-left: 0; padding-left: 0;">
+			<!--
+            	container 类不可嵌套使用
+            -->
+            <div id="left-container">
+            	<div id="left-navbar">
+            		<ul class="nav nav-pills nav-stacked">
+            			<li class="word active">
+                            <form method="get" action="/login/">
+                                <button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-th-large"></span>培养箱&nbsp;&nbsp;</button>
+                            </form>
+            			</li>
+            			<li class="word">
+                            <form method="get" action="/getbbs/">
+                                <button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-comment"></span>论坛&nbsp;&nbsp;</button>
+                            </form>
+            			</li>
+            			<li class="word">
+                            <form method="get" action="/my/">
+                                <button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-user"></span>我的&nbsp;&nbsp;</button>
+                            </form>
+            			</li>
+            		</ul>
+            	</div>
+            </div>
+			<div id="right-container">
+				<div id="bbs-container" style="margin-top: 10px;margin-left: 10px;">
+
+
+					<!--
+                    	作者：1758522370@qq.com
+                    	时间：2018-10-07
+                    	描述：以下是显示的论坛的各个部分
+                    -->
+
+
+
+                    <div id="purchaseDetail">
+                        <button class="btn btn-default" type="button"><a href="/getbbs/">返回</a></button>
+                        <h1>{{ cDetail.ctitle }}</h1>
+                        <p>用户{{ cDetail.user_userid.username }}           {{ cDetail.releasectime }}</p>
+                        <dl>
+                            <dt>内容</dt>
+                            <dd>{{ cDetail.cdescription }}</dd>
+                            <dt>图片</dt>
+                            <dd>{{ cDetail.cimage }}</dd>
+                        </dl>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="bottom-container">
+			<!--
+            	作者：1758522370@qq.com
+            	时间：2018-10-06
+            	描述：可为底部固定信息
+            -->
+		</div>
+	</body>
+
