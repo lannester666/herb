@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>backend</title>
+		<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/all.css" />
+        <link rel="stylesheet" href="/static/css/index.css" />
+		<link rel="stylesheet" href="/static/css/incubator.css" />
+        <link rel="stylesheet" href="/static/css/backend.css" />
+
+		<script src="/static/js/jquery-3.3.1.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+		<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="http://cdn.hcharts.cn/highmaps/modules/map.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/variable-pie.js"></script>
+
+
+	</head>
+    <body>
+            <script src="https://img.hcharts.cn/mapdata/custom/world.js"></script>
+            <script src="https://unpkg.com/lodash"></script>
+            <div class="col-md-12 xianxiinf" id="extra-page">
+                <div class="col-md-4 xianxiinf-left">
+                </div>
+                <div class="col-md-8 xianxiinf-right">
+                    <h1 class="col-md-10">具体信息</h1>
+                    <button class="col-md-2 btn btn-lg btn-default close-page" id="close-page" > <span class="glyphicon glyphicon-remove"></span></button>
+                    <div class="col-md-12 money">
+                        <h3>销售信息总结</h3>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                        <h4>各月销售信息</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>月份</th>
+                                  <th>总销售额</th>
+                                  <th>平均销售额</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>一月</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                         <h4>各培养箱销售信息</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>培养箱型号</th>
+                                  <th>总销售额</th>
+                                  <th>平均销售额</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Tanmay</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                         <h4>各地区销售信息</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                    <th>地区</th>
+                                  <th>总销售额</th>
+                                  <th>平均销售额</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Tanmay</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                         <h4>各人销售信息</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>负责人</th>
+                                  <th>负责地区</th>
+                                  <th>总销售额</th>
+                                  <th>平均销售额</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Tanmay</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                     <td>560001</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 xianxiinf" id="extra-page-plant">
+                <div class="col-md-4 xianxiinf-left">
+                </div>
+                <div class="col-md-8 xianxiinf-right">
+                    <h1 class="col-md-10">植物具体种植信息</h1>
+                    <button class="col-md-2 btn btn-lg btn-default close-page" id="close-page-plant" > <span class="glyphicon glyphicon-remove"></span></button>
+                    <div class="col-md-offset-2 col-md-10 top-search" style="margin-bottom: 40px">
+
+                         <input type="text" >
+                         <button class="btn btn-default">搜索</button>
+
+                    </div>
+                    <div class="col-md-12 table-sell">
+                        <h4>植物种植情况</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>植物名</th>
+                                  <th>种植数量</th>
+                                  <th>种植人数</th>
+                                  <th>平均评分</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>一月</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                     <td>560001</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 xianxiinf" id="extra-page-user">
+                <div class="col-md-4 xianxiinf-left">
+                </div>
+                <div class="col-md-8 xianxiinf-right">
+                    <h1 class="col-md-10">沈药农</h1>
+                    <button class="col-md-2 btn btn-lg btn-default close-page" id="close-page-user" > <span class="glyphicon glyphicon-remove"></span></button>
+                    <div class="col-md-12 money">
+                        <h3>用户信息简介</h3>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                        <h4>用户植物种植情况</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>植物名</th>
+                                  <th>种植数量</th>
+                                  <th>种植时间</th>
+                                  <th>平均评分</th>
+                                  <th>培养箱型号</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>一月</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                     <td>560001</td>
+                                    <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                     <td>560001</td>
+                                    <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                     <td>560001</td>
+                                    <td>560001</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                        <h4>用户培养箱情况</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>培养箱编号</th>
+                                  <th>运行状态</th>
+                                  <th>开始使用时间</th>
+                                  <th>使用时长</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>一月</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                     <td>560001</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                        <h4>用户订单情况</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>订单编号</th>
+                                  <th>订单类型</th>
+                                  <th>完成情况</th>
+                                  <th>负责人</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>一月</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                     <td>560001</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                        <h4>用户正在情况</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>植物名</th>
+                                  <th>种植状态</th>
+                                  <th>种植开始种植时间</th>
+                                  <th>预计收获时间</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>一月</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                     <td>560001</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+                    <div class="col-md-12 table-sell">
+                        <h4>用户维修情况</h4>
+                        <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>维修单号</th>
+                                  <th>完成情况</th>
+                                  <th>负责人</th>
+                                  <th>用户满意度</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>一月</td>
+                                  <td>Bangalore</td>
+                                  <td>560001</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Sachin</td>
+                                  <td>Mumbai</td>
+                                  <td>400003</td>
+                                     <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>Uma</td>
+                                  <td>Pune</td>
+                                  <td>411027</td>
+                                     <td>560001</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </div>
+
+                </div>
+            </div>
+		    <div id="body-container" class="col-md-12 bbs-main" style="padding-right: 0px">
+			<!--
+            	container 类不可嵌套使用
+            -->
+            <div  class="col-md-3 bbs-left">
+                <h1 style="color: lightgray;margin-left: 10px">智药后台管理系统</h1>
+                <div class=" back-inf">
+                    <img class="col-md-4 img-circle" src="/static/img/personInfo/me.PNG">
+                    <h2 class="col-md-offset-2 col-md-4">jojo</h2>
+                </div>
+                <ul id="mytab" class="col-md-12 back-list">
+                    <li class="col-md-12"><a class="col-md-12" href="#allinf" data-toggle="tab">总体信息管理</a></li>
+                    <li class="col-md-12"><a class="col-md-12" href="#userinf" data-toggle="tab">用户管理</a></li>
+                    <li class="col-md-12"><a class="col-md-12" href="#boxinf" data-toggle="tab">培养箱管理</a></li>
+                    <li class="col-md-12"><a class="col-md-12" href="#ddinf" data-toggle="tab">订单管理</a></li>
+                    <li class="col-md-12"><a class="col-md-12" href="#fixinf" data-toggle="tab">维修消息</a></li>
+
+
+                </ul>
+            </div>
+			<div class="col-md-9 bbs-right" >
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="allinf">
+
+                            <div class="col-md-12 detail">
+                                <h2 class="col-md-10" >总体销售信息简览</h2>
+                                <button class="col-md-2 btn btn-default open-page" style="margin-top: 15px"  id="open-page">详细信息</button>
+                                <div class="col-md-5 detail-small" id="yearsell"></div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-6 detail-small"  id="seer"></div>
+                            </div>
+
+                            <div class="col-md-12 detail" >
+                                <h2 class="col-md-10" >总体种植情况简浏览</h2>
+                                <button class="col-md-2 btn btn-default open-page" style="margin-top: 15px" id="open-page-plant">详细信息</button>
+                                <div class="col-md-5 detail-small" id="must-plant"></div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-6 detail-small"  id="top-plant" style="padding: 20px">
+                                    <table class="table table-hover">
+                                      <h2>高评分药材</h2>
+                                      <thead>
+                                        <tr>
+                                          <th>药材名称</th>
+                                          <th>种植总量</th>
+                                          <th>平均评分</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>Tanmay</td>
+                                          <td>Bangalore</td>
+                                          <td>560001</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Sachin</td>
+                                          <td>Mumbai</td>
+                                          <td>400003</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Uma</td>
+                                          <td>Pune</td>
+                                          <td>411027</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-12 detail">
+                                 <h2 class="col-md-10" >网站更新信息简览</h2>
+                                <button class="col-md-2 btn btn-default open-page" style="margin-top: 15px"  id="open-page">详细信息</button>
+                                <div class="col-md-5 detail-small"></div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-6 detail-small" ></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="userinf">
+                           <div class="col-md-12 inf-detail">
+                                <div class="list-box">
+                                    <div class="btn-group " style="margin-bottom: 20px">
+                                        <button type="button" class="btn btn-default">按地区</button>
+                                        <button type="button" class="btn btn-default">按活跃度</button>
+                                        <button type="button" class="btn btn-default">按消费金额</button>
+                                        <div class="top-search" style="margin-top: 0px; float: left; margin-left: 540px">
+                                            <input type="text" >
+                                            <button class="btn btn-default">搜索</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-group" id="accordion" style="padding: 10px">
+                                        <div class="col-md-12 back-user-info">
+                                            <div class="col-md-1">
+                                                <img class="img-circle " src="/static/img/personInfo/me.PNG">
+                                            </div>
+                                            <h2 class="col-md-2">沈药农</h2>
+                                            <div class="col-md-3 back-user-info-more">
+                                                <p>用户ID</p>
+                                                <p>用户使用培养箱型号</p>
+                                                <p>用户使用时长</p>
+                                            </div>
+                                            <div class="col-md-3 back-user-info-more">
+                                                <p>用户注册时间</p>
+                                                <p>用户活跃时长</p>
+                                                <p>用户上次登录时间</p>
+                                            </div>
+                                            <button class="col-md-1 btn btn-lg btn-default" style="margin-top: 20px" id="open-page-user">详情</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                             <ul class="pagination" style="margin-top:20px ;margin-left: 40%">
+                                <li><a href="#">&laquo;</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="boxinf">
+                            <div class="col-md-12 inf-detail">
+                                <div class="list-box">
+                                    <div class="btn-group " style="margin-bottom: 20px">
+                                        <button type="button" class="btn btn-default">按地区</button>
+                                        <button type="button" class="btn btn-default">按管理方式</button>
+                                        <button type="button" class="btn btn-default">按状态</button>
+                                        <select class="my-select">
+                                            <option value="volvo">全国</option>
+                                            <option value="saab">北京</option>
+                                            <option value="mercedes">上海</option>
+                                            <option value="audi">浙江</option>
+                                        </select>
+                                        <div class="top-search" style="margin-top: 0px; float: left; margin-left: 340px">
+                                            <input type="text" >
+                                            <button class="btn btn-default">搜索</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                            <div class="back-box-mess">
+                                                    <p >培养箱编号:</p>
+                                                    <p style="color:gray"> se-23001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    <p > 所有人:</p>
+                                                    <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    <p > 所在城市:</p>
+                                                    <p style="color:gray">北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    <p >运行状态:</p>
+                                                    <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span>
+                                                    <p >托管状态:</p>
+                                                    <p style="color:green">私管&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                </div>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                             <div id="collapseOne" class="panel-collapse collapse">
+                                           <div class="panel-body">
+                                           <!--
+                                              由于存放实时信息
+                                             -->
+                                             <div class="col-md-2 back-box-img">由于存放实时图像</div>
+                                            <!--
+                                            用于存放箱子设备的一些信息以及状态
+                                            -->
+                                            <div class="col-md-offset-1 col-md-5 back-box-img">用于存放箱子设备的一些信息以及状态</div>
+                                            <!--
+                                             用于存放箱子内的一些简单状态
+                                            -->
+                                             <a>
+                                            <div class="col-md-offset-1 col-md-3 back-box-img">用于存放箱子内的一些简单状态</div>
+                                             </a>
+                                            </div>
+                                        </div>
+                                     </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                         <h4 class="panel-title">
+                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <div class="back-box-mess">
+                                        <p >培养箱编号:</p>
+                                        <p style="color:gray"> se-23001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p > 所有人:</p>
+                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p > 所在城市:</p>
+                                        <p style="color:gray">北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p >运行状态:</p>
+                                        <span class="glyphicon glyphicon-ok" style="color: green">&nbsp;&nbsp;&nbsp;</span>
+                                        <p >托管状态:</p>
+                                        <p style="color:green">公管&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    </div>
+                                        </a>
+                                    </h4>
+                                    </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                   <div class="panel-body">
+                                   <!--
+                                      由于存放实时信息
+                                     -->
+                                     <div class="col-md-2 back-box-img">由于存放实时图像</div>
+                                    <!--
+                                    用于存放箱子设备的一些信息以及状态
+                                    -->
+                                    <div class="col-md-offset-1 col-md-5 back-box-img">用于存放箱子设备的一些信息以及状态</div>
+                                    <!--
+                                     用于存放箱子内的一些简单状态
+                                    -->
+                                     <a>
+                                    <div class="col-md-offset-1 col-md-3 back-box-img">用于存放箱子内的一些简单状态</div>
+                                     </a>
+                            </div>
+                    </div>
+                </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <div class="back-box-mess">
+                                                        <p >培养箱编号:</p>
+                                                        <p style="color:gray"> se-23001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 所有人:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 所在城市:</p>
+                                                        <p style="color:gray">北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p >运行状态:</p>
+                                                        <span class="glyphicon glyphicon-info-sign" style="color: yellow">&nbsp;&nbsp;&nbsp;</span>
+                                                        <p >托管状态:</p>
+                                                        <p style="color:green">私管&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                          </div>
+                                    </a>
+                                </h4>
+                                     </div>
+                                     <div id="collapseThree" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                   <!--
+                                                      由于存放实时信息
+                                                     -->
+                                                     <div class="col-md-2 back-box-img">由于存放实时图像</div>
+                                                    <!--
+                                                    用于存放箱子设备的一些信息以及状态
+                                                    -->
+                                                    <div class="col-md-offset-1 col-md-5 back-box-img">用于存放箱子设备的一些信息以及状态</div>
+                                                    <!--
+                                                     用于存放箱子内的一些简单状态
+                                                    -->
+                                                     <a>
+                                                    <div class="col-md-offset-1 col-md-3 back-box-img">用于存放箱子内的一些简单状态</div>
+                                                     </a>
+                                            </div>
+                                     </div>
+                                    </div>
+                                    </div>
+                                </div>
+                             <ul class="pagination" style="margin-top:20px ;margin-left: 40%">
+                                <li><a href="#">&laquo;</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ddinf">
+                            <div class="col-md-12 inf-detail">
+                                <div class="list-box">
+                                    <div class="btn-group " style="margin-bottom: 20px">
+                                        <button type="button" class="btn btn-default">按地区</button>
+                                        <button type="button" class="btn btn-default">按管理方式</button>
+                                        <button type="button" class="btn btn-default">按状态</button>
+                                        <select class="my-select">
+                                            <option value="volvo">全国</option>
+                                            <option value="saab">北京</option>
+                                            <option value="mercedes">上海</option>
+                                            <option value="audi">浙江</option>
+                                        </select>
+                                        <div class="top-search" style="margin-top: 0px; float: left; margin-left: 340px">
+                                            <input type="text" >
+                                            <button class="btn btn-default">搜索</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#accordion"
+                                                        href="#dt1">
+                                                        <div class="back-box-mess">
+                                                            <p >订单编号:</p>
+                                                            <p style="color:gray"> 3213421434141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                            <p > 买家:</p>
+                                                            <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                            <p > 买家所在城市:</p>
+                                                            <p style="color:gray">北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                            <p >完成状态:</p>
+                                                            <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span>
+                                                            <p >负责人:</p>
+                                                            <p style="color:green">黄新龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        </div>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="dt1" class="panel-collapse collapse ">
+                                                    <div class="panel-body">
+                                                        <table class="table table-hover">
+                                                              <thead>
+                                                                <tr>
+                                                                  <th>订单机器编号</th>
+                                                                  <th>机器状态</th>
+                                                                  <th>订单负责人</th>
+                                                                  <th>买主所在地点</th>
+                                                                  <th>购买日期</th>
+                                                                  <th>买主联系方式</th>
+                                                                </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                               <tr>
+                                                                  <td><a href="/incubatorDetail/i01">TC-0011</a></td>
+                                                                  <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                                  <td>黄经理</td>
+                                                                  <td>北京</td>
+                                                                  <td>2019-08-09</td>
+                                                                  <td>1773696803</td>
+                                                                </tr>
+                                                               <tr>
+                                                                  <td>FG-3213</td>
+                                                                  <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                                  <td>黄经理</td>
+                                                                  <td>北京</td>
+                                                                  <td>2019-08-09</td>
+                                                                  <td>1773696803</td>
+                                                                </tr>
+                                                               <tr>
+                                                                  <td>ER-1413</td>
+                                                                  <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                                  <td>黄经理</td>
+                                                                  <td>北京</td>
+                                                                  <td>2019-08-09</td>
+                                                                  <td>1773696803</td>
+                                                                </tr>
+                                                               <tr>
+                                                                  <td>FE-1412</td>
+                                                                  <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                                  <td>黄经理</td>
+                                                                  <td>北京</td>
+                                                                  <td>2019-08-09</td>
+                                                                  <td>1773696803</td>
+                                                                </tr>
+                                                               <tr>
+                                                                  <td>DA-3213</td>
+                                                                  <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                                  <td>黄经理</td>
+                                                                  <td>北京</td>
+                                                                  <td>2019-08-09</td>
+                                                                  <td>1773696803</td>
+                                                                </tr>
+                                                              </tbody>
+                                                            </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                    href="#dt1">
+                                                    <div class="back-box-mess">
+                                                        <p >订单编号:</p>
+                                                        <p style="color:gray"> 3213421434141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 买家:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 买家所在城市:</p>
+                                                        <p style="color:gray">北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p >完成状态:</p>
+                                                        <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span>
+                                                        <p >负责人:</p>
+                                                        <p style="color:green">黄新龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    </div>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="dt1" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <table class="table table-hover">
+                                                          <thead>
+                                                            <tr>
+                                                              <th>订单机器编号</th>
+                                                              <th>机器状态</th>
+                                                              <th>订单负责人</th>
+                                                              <th>买主所在地点</th>
+                                                              <th>购买日期</th>
+                                                              <th>买主联系方式</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                           <tr>
+                                                              <td><a href="/incubatorDetail/i01">TC-0011</a></td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>FG-3213</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>ER-1413</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>FE-1412</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>DA-3213</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                    href="#dt1">
+                                                    <div class="back-box-mess">
+                                                        <p >订单编号:</p>
+                                                        <p style="color:gray"> 3213421434141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 买家:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 买家所在城市:</p>
+                                                        <p style="color:gray">北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p >完成状态:</p>
+                                                        <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span>
+                                                        <p >负责人:</p>
+                                                        <p style="color:green">黄新龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    </div>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="dt1" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <table class="table table-hover">
+                                                          <thead>
+                                                            <tr>
+                                                              <th>订单机器编号</th>
+                                                              <th>机器状态</th>
+                                                              <th>订单负责人</th>
+                                                              <th>买主所在地点</th>
+                                                              <th>购买日期</th>
+                                                              <th>买主联系方式</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                           <tr>
+                                                              <td><a href="/incubatorDetail/i01">TC-0011</a></td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>FG-3213</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>ER-1413</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>FE-1412</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>DA-3213</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>黄经理</td>
+                                                              <td>北京</td>
+                                                              <td>2019-08-09</td>
+                                                              <td>1773696803</td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             <ul class="pagination" style="margin-top:20px ;margin-left: 40%">
+                                <li><a href="#">&laquo;</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="fixinf">
+                            <div class="col-md-12 inf-detail">
+                                <div class="list-box">
+                                    <div class="btn-group " style="margin-bottom: 20px">
+                                        <button type="button" class="btn btn-default">按地区</button>
+                                        <button type="button" class="btn btn-default">按管理方式</button>
+                                        <button type="button" class="btn btn-default">按状态</button>
+                                        <select class="my-select">
+                                            <option value="volvo">全国</option>
+                                            <option value="saab">北京</option>
+                                            <option value="mercedes">上海</option>
+                                            <option value="audi">浙江</option>
+                                        </select>
+                                        <div class="top-search" style="margin-top: 0px; float: left; margin-left: 340px">
+                                            <input type="text" >
+                                            <button class="btn btn-default">搜索</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                    href="#wx1">
+                                                    <div class="back-box-mess">
+                                                        <p >维修单号:</p>
+                                                        <p style="color:gray"> 3213421434141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 培养箱型号:</p>
+                                                        <p style="color:gray">TC-001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 箱主:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 箱主联系方式:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p >是否解决:</p>
+                                                        <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span>
+                                                        <p >负责人:</p>
+                                                        <p style="color:green">黄新龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    </div>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="wx1" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <table class="table table-hover">
+                                                          <thead>
+                                                            <tr>
+                                                              <th>机器传感器</th>
+                                                              <th>传感器状态</th>
+                                                              <th>是否维修过</th>
+                                                              <th>问题猜测</th>
+                                                              <th>工作时间</th>
+                                                              <th>是否需要更换</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                           <tr>
+                                                              <td>温度传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>电压过高</td>
+                                                              <td>6个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>湿度传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>进水</td>
+                                                              <td>3个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>关照传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>否</td>
+                                                              <td>电压过高</td>
+                                                              <td>1个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                          <tr>
+                                                              <td>气压传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>电压过高</td>
+                                                              <td>6个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                    href="#wx1">
+                                                    <div class="back-box-mess">
+                                                        <p >维修单号:</p>
+                                                        <p style="color:gray"> 3213421434141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 培养箱型号:</p>
+                                                        <p style="color:gray">TC-001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 箱主:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 箱主联系方式:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p >是否解决:</p>
+                                                        <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span>
+                                                        <p >负责人:</p>
+                                                        <p style="color:green">黄新龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    </div>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="wx1" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <table class="table table-hover">
+                                                          <thead>
+                                                            <tr>
+                                                              <th>机器传感器</th>
+                                                              <th>传感器状态</th>
+                                                              <th>是否维修过</th>
+                                                              <th>问题猜测</th>
+                                                              <th>工作时间</th>
+                                                              <th>是否需要更换</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                           <tr>
+                                                              <td>温度传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>电压过高</td>
+                                                              <td>6个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>湿度传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>进水</td>
+                                                              <td>3个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>关照传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>否</td>
+                                                              <td>电压过高</td>
+                                                              <td>1个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                          <tr>
+                                                              <td>气压传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>电压过高</td>
+                                                              <td>6个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                    href="#wx1">
+                                                    <div class="back-box-mess">
+                                                        <p >维修单号:</p>
+                                                        <p style="color:gray"> 3213421434141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 培养箱型号:</p>
+                                                        <p style="color:gray">TC-001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 箱主:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p > 箱主联系方式:</p>
+                                                        <p style="color:gray">沈药农&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p >是否解决:</p>
+                                                        <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span>
+                                                        <p >负责人:</p>
+                                                        <p style="color:green">黄新龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    </div>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="wx1" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <table class="table table-hover">
+                                                          <thead>
+                                                            <tr>
+                                                              <th>机器传感器</th>
+                                                              <th>传感器状态</th>
+                                                              <th>是否维修过</th>
+                                                              <th>问题猜测</th>
+                                                              <th>工作时间</th>
+                                                              <th>是否需要更换</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                           <tr>
+                                                              <td>温度传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>电压过高</td>
+                                                              <td>6个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>湿度传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>进水</td>
+                                                              <td>3个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                           <tr>
+                                                              <td>关照传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>否</td>
+                                                              <td>电压过高</td>
+                                                              <td>1个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                          <tr>
+                                                              <td>气压传感器</td>
+                                                              <td> <span class="glyphicon glyphicon-remove" style="color: red">&nbsp;&nbsp;&nbsp;</span></td>
+                                                              <td>是</td>
+                                                              <td>电压过高</td>
+                                                              <td>6个月</td>
+                                                              <td>是</td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             <ul class="pagination" style="margin-top:20px ;margin-left: 40%">
+                                <li><a href="#">&laquo;</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+
+                            </div>
+                        </div>
+                    </div>
+			</div>
+		</div>
+        </div>
+  <link rel="stylesheet" type="text/css" href="https://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
+    <script>
+        var chart = Highcharts.chart('yearsell', {
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: '年度销售信息'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: ['一月', '二月', '三月', '四月', '五月', '六月',
+                             '七月', '八月', '九月', '十月', '十一月', '十二月']
+            },
+            yAxis: {
+                title: {
+                    text: '销售额'
+                },
+                labels: {
+                    formatter: function () {
+                       return this.value ;
+                    }
+                }
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        radius: 4,
+                        lineColor: '#666666',
+                        lineWidth: 1
+                    }
+                }
+            },
+            series: [{
+                name: '月均销售额',
+                marker: {
+                    symbol: 'square'
+                },
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 22.2, {
+                    y: 22.5,
+                    marker: {
+                        symbol: 'url(https://www.highcharts.com/demo/gfx/sun.png)'
+                    }
+                }, 23.3, 28.3, 33.9, 29.6]
+            }, ]
+        });
+        var map = null,
+            geochina = 'https://data.jianshukeji.com/jsonp?filename=geochina/',
+            combines = [{
+                name: '西南',
+                id: 'southwest',
+                'hc-middle-x': 0.73,
+                province: ['西藏', '云南', '重庆', '贵州','四川']
+            },{
+                name: '华中',
+                id: 'center',
+                'hc-middle-y': 0.6,
+                province: ['湖北', '湖南', '江西','河南']
+            },{
+                name: '华南',
+                id: 'south',
+                'hc-middle-y': 0.4,
+                province: ['广东', '广西', '海南']
+            },{
+                name: '华东',
+                id: 'east',
+                'hc-middle-x': 0.6,
+                province: ['浙江', '安徽', '江苏','山东','上海','福建']
+            },{
+                name: '华北',
+                id: 'north',
+                'hc-middle-y': 0.7,
+                'hc-middle-x': 0.6,
+                province: ['内蒙古', '山西', '河北','北京', '天津']
+            },{
+                name: '东北',
+                id: 'northeast',
+                province: ['辽宁', '吉林', '黑龙江']
+            },{
+                name: '西北',
+                id: 'northwest',
+                'hc-middle-x': 0.6,
+                'hc-middle-y': 0.7,
+                province: ['新疆', '青海', '甘肃', '宁夏','陕西']
+            }];
+        $.getJSON(geochina + 'china.json&callback=?', function(mapdata) {
+            var data = [];
+            function findCoordinatesByName(name) {
+                var index = 0,
+                    finded = _.filter(mapdata.features, function(feature, i) {
+                        index = i;
+                        return feature.properties.name === name;
+                    });
+                if(finded && finded.length > 0) {
+                    finded[0].visible = false;
+                    return finded[0].geometry.coordinates;
+                } else {
+                    return null;
+                }
+            }
+            Highcharts.each(combines, function(combine) {
+                var feature = {
+                    id: combine.id,
+                    type: 'Feature',
+                    properties: combine,
+                    geometry: {
+                        type: 'MultiPolygon',
+                        coordinates: []
+                    }
+                };
+                Highcharts.each(combine.province, function(p) {
+                    var tmp = findCoordinatesByName(p);
+                    if(tmp) {
+                        feature.geometry.coordinates =   feature.geometry.coordinates.concat(tmp);
+                    }
+                });
+                mapdata.features.push(feature);
+            });
+            // 随机数据
+            var newFeatues  = [],
+                filterName = ['香港', '澳门', '南海诸岛'];
+            Highcharts.each(mapdata.features, function(md, index) {
+                var tmp = {
+                    name: md.properties.name,
+                    value: Math.floor((Math.random() * 100) + 1) // 生成 1 ~ 100 随机值
+                };
+                if(md.visible !== false && filterName.indexOf(tmp.name) === -1) {
+                    data.push(tmp);
+                    newFeatues.push(md);
+                }
+            });
+            mapdata.features = newFeatues;
+            console.log( mapdata)
+            map = new Highcharts.Map('seer', {
+                title: {
+                    text: '负责人分布图'
+                },
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    useHTML: true,
+                    headerFormat: '<table></tr>',
+                    pointFormat: '<tr><td>{point.properties.name} 负责人：黄新龙</td></tr>' ,
+                    footerFormat: '</table>'
+                },
+                series: [{
+                    colors: ['#f9ad93', '#fbc4b0', '#fbc4b0', '#ffe6df', '#f59572', '#f69f81','#fab9a3'],
+                    colorByPoint: true,
+                    data: data,
+                    mapData: mapdata,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    },
+                    states: {
+                        hover: {
+                            borderWidth: 0,
+                            borderColor: 'rgba(0,0,0,0)'
+                        }
+                    },
+                    joinBy: 'name',
+                    name: '中国地图',
+                    borderWidth: 0,
+                    borderColor: 'rgba(0,0,0,0)'
+                }]
+            });
+        });
+
+    </script>
+    <script>Highcharts.chart('must-plant', {
+        chart: {
+            type: 'variablepie'
+        },
+        title: {
+            text: '热门药材'
+        },
+        subtitle: {
+            text: '扇区长度（圆周方法）表示种植人数，宽度（纵向）表示种植平均数量'
+        },
+        tooltip: {
+            headerFormat: '',
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+            '人数(人): <b>{point.y}</b><br/>' +
+            '种植平均数量 (每人种植数): <b>{point.z}</b><br/>'
+        },
+        series: [{
+            minPointSize: 10,
+            innerSize: '20%',
+            zMin: 0,
+            name: 'countries',
+            data: [{
+                name: '人参',
+                y: 505370,
+                z: 92.9
+            }, {
+                name: '当归',
+                y: 551500,
+                z: 118.7
+            }, {
+                name: '桂皮',
+                y: 312685,
+                z: 124.6
+            }, {
+                name: '胖大海',
+                y: 78867,
+                z: 137.5
+            }, {
+                name: '三七',
+                y: 301340,
+                z: 201.8
+            }, {
+                name: '何首乌',
+                y: 41277,
+                z: 214.5
+            }, {
+                name: '甘草',
+                y: 357022,
+                z: 235.6
+            }]
+        }]
+    });
+    </script>
+    <script>
+        $("#extra-page").hide()
+        $("#open-page").click(function () {
+            $("#extra-page").show()
+        })
+        $("#close-page").click(function () {
+            $("#extra-page").hide()
+        })
+
+         $("#extra-page-plant").hide()
+        $("#open-page-plant").click(function () {
+            $("#extra-page-plant").show()
+        })
+        $("#close-page-plant").click(function () {
+            $("#extra-page-plant").hide()
+        })
+
+         $("#extra-page-user").hide()
+        $("#open-page-user").click(function () {
+            $("#extra-page-user").show()
+        })
+        $("#close-page-user").click(function () {
+            $("#extra-page-user").hide()
+        })
+    </script>
+    </body>
+
+</html>

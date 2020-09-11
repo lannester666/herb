@@ -1,0 +1,40 @@
+#top-container {
+	height: 50px;
+	border-bottom: solid darkgray 0.1px;
+	width: 100%;
+}
+
+#body-container {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#left-container {
+	width:10%;
+	float:left;
+	height:1000px;
+}
+
+#right-container {
+	width:auto;
+	float:left;
+	height:2000px;
+}
+
+#left-navbar{
+	width: auto;
+	float: left;
+	border:solid darkgray 0.1px;
+	border-radius:25px;
+	padding: 0.1px;
+	margin: 10px;
+}
+
+.word {
+	text-align: center;
+}
+
+span{
+	margin-right: 5px;
+}
+

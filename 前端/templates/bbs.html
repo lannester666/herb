@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/all.css" />
+        <link rel="stylesheet" href="/static/css/index.css" />
+		<link rel="stylesheet" href="/static/css/bbs.css" />
+		<script src="/static/js/jquery-3.3.1.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+		<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="/static/js/bbs.js"></script>
+		
+	</head>
+
+	<body>
+		<div class="col-md-12 title-lead row">
+            <ul class="col-md-3">
+                <li><a id="logo" href="/login">智药</a></li>
+                <li class="tile-link" style="margin-left: 80px;"><a href="/login">主页</a></li>
+                <li class="tile-link"><a >产品</a></li>
+                <li class="tile-link"><a href="/bbs">论坛</a></li>
+            </ul>
+            <div class="col-md-1"></div>
+            <div class="col-md-4 top-search">
+                <input type="text" >
+                <button class="btn btn-default">搜索</button>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 top-login">
+                <div class="userimg-sm">
+                   <img src="/static/img/wdl.jpg">
+                </div>
+                <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">登录</button>
+
+            </div>
+        </div>
+		<div id="body-container" class="col-md-12 bbs-main">
+			<!--
+            	container 类不可嵌套使用
+            -->
+            <div  class="col-md-offset-1 col-md-3 bbs-left">
+
+            </div>
+			<div class="col-md-7 bbs-right" >
+				<div id="bbs-container" style="margin-top: 10px;margin-left: 10px;">
+					<div id="bbs-header">
+						<ul class="nav navbar-nav nav-tabs" id="bbsTabs">
+							<li class="active">
+                                <a href="#all" data-toggle="tab">全部帖子</a>
+							</li>
+                            <li>
+                                <a href="#selling" data-toggle="tab">药材销售</a>
+							</li>
+                            <li>
+								<a href="#purchase" data-toggle="tab">药材收购</a>
+							</li>
+							<li>
+								<a href="#communication" data-toggle="tab">经验交流</a>
+							</li>
+							<li>
+								<a href="#myPost" data-toggle="tab">我的帖子</a>
+							</li>
+
+							<li>
+								<div>
+									<form class="navbar-form navbar-left" role="search">
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Search" />
+										</div>
+										<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" style="margin-right: 0;"></span></button>
+									</form>
+									<button type="button" class="btn btn-default  navbar-btn" id="edit-button" data-toggle="modal" data-target="#chooseType"><span class="glyphicon glyphicon-pencil" ></span>我要发布</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<br />
+
+					<!--
+                    	作者：1758522370@qq.com
+                    	时间：2018-10-07
+                    	描述：以下是显示的论坛的各个部分
+                    -->
+
+					<div class="modal fade" id="chooseType" tabindex="-1" role="dialog" aria-labelledby="bbsTitle" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="bbsTitle">请选择发布所文章类型</h4>
+								</div>
+								<div class="modal-body bbs-btn-crt">
+                                    <form class="col-md-4" method="get" action="/bbs/writeSelling/">
+                                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-leaf"></span>药材销售信息</button>
+                                    </form>
+                                    <form class="col-md-4" method="get" action="/bbs/writePurchase/">
+                                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-grain"></span>药材收购信息</button>
+                                    </form>
+                                    <form  class="col-md-4" method="get" action="/bbs/writeCommunication/">
+                                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bullhorn"></span>经验交流信息</button>
+                                    </form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr align="left" width="70%" color="white" />
+                    {% if success %}
+                        <div class="alert alert-warning">
+                            <a href="#" class="close" data-dismiss="alert">
+                                &times;
+                            </a>
+                            <strong>抱歉！</strong>帖子走丢了
+                        </div>
+                    {% endif %}
+
+					<div id="bbsTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="all">
+
+						</div>
+                        <div class="tab-pane fade" id="selling">
+                        <div class="list-group">
+                            {% for foo in slist %}
+                               <a href="sellingDetail/{{ foo.sid }}" class="list-group-item">
+                               <h4 class="list-group-item-heading">
+                                   {{ foo.splant }}销售        {{ foo.sprice }} RMB/KG
+                               </h4>
+                               <h6 class="list-group-item-text">
+                                   {{ foo.releasestime }}
+                               </h6>
+                               <p class="list-group-item-text">
+                                   {{ foo.sdescription }}
+                               </p>
+                               </a>
+							{% endfor %}
+                        </div>
+						</div>
+                        <div class="tab-pane fade" id="purchase">
+                            <div class="list-group">
+                                {% for foo in plist %}
+                                    <a href="purchaseDetail/{{ foo.bid }}" class="list-group-item">
+                               <h4 class="list-group-item-heading">
+                                   {{ foo.bplant}}收购        {{ foo.bprice }} RMB/KG
+                               </h4>
+                               <h6 class="list-group-item-text">
+                                   {{ foo.releasebtime }}
+                               </h6>
+                               <p class="list-group-item-text">
+                                   {{ foo.bdescription }}
+                               </p>
+                               </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="communication">
+                            <div class="list-group">
+                                {% for foo in clist %}
+                                    <a href="communicationDetail/{{ foo.cid }}" class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            {{ foo.ctitle }}
+                                        </h4>
+                                        <h6 class="list-group-item-text">
+                                            {{ foo.releasectime }}
+                                        </h6>
+                                        <p class="list-group-item-text">
+                                            {{ foo.cdescription }}
+                                        </p>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+						<div class="tab-pane fade" id="myPost">
+							<p>
+								我的
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="bottom-container">
+			<!--
+            	作者：1758522370@qq.com
+            	时间：2018-10-06
+            	描述：可为底部固定信息
+            -->
+		</div>
+	</body>
+
+</html>

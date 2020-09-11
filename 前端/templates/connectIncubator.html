@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+	<!--
+	作者：1758522370@qq.com
+	时间：2018-10-06
+	描述：只作为一个框架的模板，并不在真正的页面中显示
+-->
+
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/all.css" />
+		<script src="/static/js/jquery-3.3.1.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+		<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div id="top-container">
+			<!--
+            	作者：1758522370@qq.com
+            	时间：2018-10-06
+            	描述：标头
+            -->
+			<h2 style="color: transparent;
+       background-color : black;
+       text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+       -webkit-background-clip : text;">智药  zhiyao.com</h2>
+		</div>
+		<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">-->
+		<nav class="navbar navbar-light " role="navigation" style="background-color: #e3f2fd;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> 智药 </a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">商城</a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								智库 <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">jmeter</a>
+								</li>
+								<li>
+									<a href="#">EJB</a>
+								</li>
+								<li>
+									<a href="#">Jasper Report</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">分离的链接</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">另一个分离的链接</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a>
+					</li>
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">搜索</button>
+				</form>
+			</div>
+		</nav>
+		<div id="body-container" class="container" >
+			<!--
+            	container 类不可嵌套使用
+            -->
+            <div id="left-container">
+            	<div id="left-navbar">
+            		<ul class="nav nav-pills nav-stacked">
+            			<li class="word active">
+            				<a href="incubator.html"><span class="glyphicon glyphicon-th-large"></span>培养箱</a>
+            			</li>
+            			<li class="word">
+            				<a href="bbs.html"><span class="glyphicon glyphicon-comment"></span>论坛&nbsp;&nbsp;</a>
+            			</li>
+            			<li class="word">
+            				<a href="my.html"><span class="glyphicon glyphicon-user"></span>我的&nbsp;&nbsp;</a>
+            			</li>
+            		</ul>
+            	</div>
+            </div>
+			<div id="right-container">
+				<div style="margin-left:140px;margin-top: 40px;" class="row" id="right-container-block">
+					<div>
+						<blockquote>
+							<h4>连接新的培养箱</h4>
+						</blockquote>
+					</div>
+					<div class="col-md-8">
+						<form role="form">
+
+							<div class="form-group ">
+								<label for="incubatorName">名字</label>
+								<input class="form-control" type="text" placeholder="给培养箱起个名字吧" />
+							</div>
+							<div class="form-group">
+								<label for="incubatorID">编号</label>
+								<div>
+									<!--
+                                    	作者：1758522370@qq.com
+                                    	时间：2018-10-12
+                                    	描述：需要把输入控件放到div块里面才可以通过栅格系统来调整宽度
+                                    	使用 .text-center 来使按钮中的文字位于中间
+                                    -->
+									<div class="col-md-11" style="padding-left: 0;">
+										<input class="form-control col-md-10" type="text" placeholder="点击搜索按钮自动搜索" style="margin-left: 0;" />
+									</div>
+									<button class="btn btn-default col-md-1 text-center"><span class="glyphicon glyphicon-search" style="margin-right: 0;" ></span></button>
+								</div>
+							</div>
+							<br />
+							<br />
+							<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#configureEnviroment">确认连接</button>
+							<div id="configureEnviroment" class="collapse out">
+								<br />
+								<div class="form-group">
+									<label for="IPlant">种植的植物</label>
+									<input class="form-control" type="text" required="required" placeholder="填写培养箱中准备种植的植物" />
+								</div>
+								<div class="form-group" style="margin-bottom: 50px;">
+									<label for="ITemperature">温度</label>
+									<div>
+										<div class="col-md-10" style="padding-left: 0;">
+											<input class="form-control" type="number" required="required" placeholder="填写培养箱中的初始温度" />
+										</div>
+										<button class="btn btn-default col-md-2 text-center" type="button">自动检测</button>
+									</div>
+								</div>
+								<div class="form-group" style="margin-bottom: 50px;">
+									<label for="IHumidity">湿度</label>
+									<div>
+										<div class="col-md-10" style="padding-left: 0;">
+											<input class="form-control" type="number" required="required" placeholder="填写培养箱中的初始湿度" />
+										</div>
+										<button class="btn btn-default col-md-2 text-center" type="button">自动检测</button>
+									</div>
+								</div>
+								<div class="form-group" style="margin-bottom: 50px;">
+									<label for="IPressure">压强</label>
+									<div>
+										<div class="col-md-10" style="padding-left: 0;">
+											<input class="form-control" type="number" required="required" placeholder="填写培养箱中的初始压强" />
+										</div>
+										<button class="btn btn-default text-center col-md-2" type="button">自动检测</button>
+									</div>
+								</div>
+								<div class="form-group" style="margin-bottom: 50px;">
+									<label for="ILightIntensity">光照强度</label>
+									<div>
+										<div class="col-md-10" style="padding-left: 0;">
+											<input class="form-control" type="number" required="required" placeholder="填写培养箱中的初始光照强度" />
+										</div>
+										<button class="btn btn-default col-md-2 text-center" type="button">自动检测</button>
+									</div>
+								</div>
+								<a href="incubator.html">
+									<button class="btn btn-link" type="button">暂不添加，跳过此步</button>
+								</a>
+
+								<div style="float: right;">
+									<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addConfiguration">添加自定义环境配置</button>
+									<button class="btn btn-success" type="submit">完成</button>
+								</div>
+								<div class="modal fade" id="addConfiguration" tabindex="-1" role="dialog" aria-labelledby="myLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h4 class="modal-title" id="myLabel">添加自定义环境配置</h4>
+											</div>
+											<div class="modal-body form">
+												<!--
+                                                	作者：1758522370@qq.com
+                                                	时间：2018-10-12
+                                                	描述：在这一部分没有添加form，在之后根据怎么样提交用户的输入，需要添加form
+                                                -->
+												<div class="form-group" style="margin-bottom: 50px;">
+													<div class="col-md-2 text-center">
+														<label for="configureName" style="padding-top: 7px;">名称</label>
+													</div>
+													<div class="col-md-10">
+														<input type="text" class="form-control" required="required" placeholder="请输入配置变量的名称" />
+													</div>
+												</div>
+												<div class="form-group  " style="margin-bottom: 100px;">
+													<div class="col-md-2 text-center">
+														<label for="configureAmount" style="padding-top: 7px;">剂量</label>
+													</div>
+													<div class="col-md-10">
+														<input type="text" class="form-control" required="required" placeholder="请输入配置变量的量" />
+													</div>
+												</div>
+												<div class="form-group" style="margin-bottom: 100px;">
+													<div class="col-md-2 text-center">
+														<label for="configureUnit" style="padding-top: 7px;">单位</label>
+													</div>
+													<div class="col-md-10">
+														<input type="text" class="form-control" required="required" placeholder="请输入配置变量的单位" />
+													</div>
+												</div>
+												<!--
+                                                	作者：1758522370@qq.com
+                                                	时间：2018-10-12
+                                                	描述：这两个<br/>有奇效，勿删
+                                                -->
+												<br />
+												<br />
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+												<button type="button" class="btn btn-primary">确认</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="bottom-container">
+			<!--
+            	作者：1758522370@qq.com
+            	时间：2018-10-06
+            	描述：可为底部固定信息
+            -->
+		</div>
+
+	</body>
+
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

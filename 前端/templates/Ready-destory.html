@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--<meta http-equiv="refresh" content="2">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% load static %}
+    <title>incubator details</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{% static 'css/incubator/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="carousel.css" rel="stylesheet">-->
+    <!--智药页面css样式-->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/incubator.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/incubator/navbar.css' %}"/>
+    <!--		<script src="../jquery-3.3.1.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--	<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>-->
+
+    <noscript>
+        <link rel="stylesheet" href="{% static 'css/incubator/noscript.css' %}"/>
+    </noscript>
+</head>
+<!-- NAVBAR
+================================================== -->
+<script>
+		function submitChangeInfo(){
+			var url="127.0.0.1";
+
+			request = XMLHttpRequest();
+
+
+		}
+
+
+
+</script>
+<body>
+<div id="top-container">
+    <!--
+        作者：1758522370@qq.com
+        时间：2018-10-06
+        描述：标头
+    -->
+    <h2 style="color: transparent;
+       background-color : black;
+       text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+       -webkit-background-clip : text;">智药 zhiyao.com</h2>
+</div>
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">-->
+<nav class="navbar navbar-light " role="navigation" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"> 智药 </a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">商城</a>
+                </li>
+                <li>
+                    <a href="#"></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        智库 <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">jmeter</a>
+                        </li>
+                        <li>
+                            <a href="#">EJB</a>
+                        </li>
+                        <li>
+                            <a href="#">Jasper Report</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">分离的链接</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">另一个分离的链接</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a>
+            </li>
+            <li>
+                <a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a>
+            </li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+    </div>
+</nav>
+<div id="left-container">
+    <div id="left-navbar">
+        <ul class="nav nav-pills nav-stacked">
+            <li class="word active">
+                <a href="incubator.html"><span class="glyphicon glyphicon-th-large"></span>培养箱</a>
+            </li>
+            <li class="word">
+                <form  method="get" action="/getbbs/" >
+                    <button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-comment"></span>论坛&nbsp;&nbsp;</button>
+                </form>
+            </li>
+            <li class="word">
+                <form method="get" action="/my/">
+                <button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-user"></span>我的&nbsp;&nbsp;</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="right-container">
+
+    <nav id="nav" style="width:auto;">
+        <ul>
+            <li><a href="#viewChart" class="active">查看</a></li>
+            <li><a href="#settingProperties">修改</a></li>
+        </ul>
+    </nav>
+
+    <div id="main" >
+
+        <img src="/image" id="incubator_img" onload="refreshImg()">
+        <script>
+            function refreshImg(){
+                setInterval(a,5000);
+            }
+            function a(){
+                document.getElementById('incubator_img').src="/image"+Math.random();
+            }
+        </script>
+        <p>温度：{{tem_cur}}</p>
+        <p>湿度：{{hum_cur}}</p>
+        <p>气压：{{pre_cur}}</p>
+        <p>光照：{{led_cur}}</p>
+        <form id="incubator_set_param" action="" method="post">
+                   {% csrf_token %}
+            温度
+            <input type="text" name="tem_ctl"/>
+            湿度
+            <input type="text" name="hum_ctl"/>
+            光照
+            <input type="text" name="led_ctl"/>
+            压强
+            <input type="text" name="pre_ctl"/>
+            <input type="submit" value="提交修改"/>
+        </form>
+    </div>
+</div>
+<!--right-container-->
+<footer class="footer">
+
+    <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+    </div>
+</footer>
+
+<script>
+    function flushImage(){
+        var x=1;
+        var a = document.getElementById("incubator_img");
+        while(true){
+            if (x==1){
+                x=-1;
+                a.src="/image1";
+            }
+            if (x==-1){
+                x=1;
+                a.src="/image";
+            }
+        }
+    }
+</script>
+
+<script>
+			// 当网页向下滑动 20px 出现"返回顶部" 按钮
+			window.onscroll = function() {
+				scrollFunction()
+			};
+
+			function scrollFunction() {
+				console.log(121);
+				if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("returnTop").style.display = "block";
+				} else {
+					document.getElementById("returnTop").style.display = "none";
+				}
+			}
+
+			// 点击按钮，返回顶部
+			function topFunction() {
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+</script>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
+<script>
+			window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js "><\/script>')
+
+
+
+</script>
+<script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="{% static 'js/incubator/ie10-viewport-bug-workaround.js' %}"></script>
+
+
+<script src="{% static 'js/incubator/jquery.min.js' %}"></script>
+<script src="{% static 'js/incubator/jquery.scrollex.min.js' %}"></script>
+<script src="{% static 'js/incubator/jquery.scrolly.min.js' %}"></script>
+<!--	<script src="assets/js/browser.min.js"></script>-->
+<script src="{% static 'js/incubator/breakpoints.min.js' %}"></script>
+<script src="{% static 'js/incubator/util.js' %}"></script>
+<script src="{% static 'js/incubator/main.js' %}"></script>
+</body>
+
+</html>
