@@ -1,0 +1,236 @@
+.content-middle {
+    background-color: #fff;
+    padding: 5em 0;
+}
+
+.col-mid {
+    text-align: center;
+    padding: 0em 0 0em;
+}
+
+.col-mid h3 {
+    color: #000000;
+    font-size: 3em;
+    padding: 0.3em 0 0.3em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.col-mid p {
+    color: #BEBDBD;
+    font-size: 1em;
+    line-height: 1.8em;
+    width: 60%;
+    margin: 0 auto;
+}
+
+html, body {
+    background: #fff;
+    font-size: 100%;
+    font-family: 'Arimo', sans-serif;
+}
+
+.content-middle3 {
+    text-align: center;
+    padding: 1.5em 1em 0;
+}
+
+.content-middle3 h4 a {
+    text-decoration: none;
+    color: #000;
+}
+
+.content-middle3 label {
+    width: 100px;
+    margin: 1em auto;
+    height: 2px;
+    border-radius: 5px;
+    color: #000;
+    background-color: #FF0068;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, label, p {
+    margin: 0;
+}
+
+.content-middle3 p {
+    color: #BEBDBD;
+    line-height: 1.8em;
+    font-size: 1em;
+    margin: 0.5em 0 0em 0;
+}
+
+h1, h2, h3, h4, h5, h6, label, p {
+    margin: 0;
+}
+
+
+.fotter {
+    background: url(../images/fotter-bg.jpg) no-repeat 0px 0px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 270px;
+    padding: 4em 0;
+}
+
+.ftr-left {
+    text-align: left;
+}
+
+.ftr-left, .ftr-right {
+    border-right: 2px solid black;
+}
+
+body a {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+
+.ftr-left p {
+    color: black;
+    width: 69%;
+    margin-top: 1em;
+    padding-bottom: 2em;
+}
+
+p {
+    margin: 0;
+}
+
+.office {
+    text-align: left;
+    width: 45%;
+    float: left;
+    padding-left: 4em;
+}
+
+.office h3, .tweets h3 {
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.office p {
+    color: black;
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+p {
+    margin: 0;
+}
+
+.office a {
+    color: black;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+body a {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.tweets {
+    text-align: left;
+    width: 50%;
+    float: left;
+}
+
+.office h3, .tweets h3 {
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+i.icon1 {
+    background: url(../images/twt.png) no-repeat 0px 0px;
+    display: inline-block;
+    width: 32px;
+    height: 15px;
+    float: left;
+}
+
+.tweets p {
+    color: black;
+    font-size: 0.9em;
+    float: left;
+    width: 88%;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 0;
+}
+
+.tweets h5 {
+    color: black;
+    font-style: italic;
+    font-size: 0.7em;
+    margin: 5px 0 12px 35px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+i.icon1 {
+    background: url(../images/twt.png) no-repeat 0px 0px;
+    display: inline-block;
+    width: 32px;
+    height: 15px;
+    float: left;
+}
+
+.tweets p {
+    color: black;
+    font-size: 0.9em;
+    float: left;
+    width: 88%;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 0;
+}
+
+.tweets h5 {
+    color: #fff;
+    font-style: italic;
+    font-size: 0.7em;
+    margin: 5px 0 12px 35px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p.copyright {
+    margin-top: 2em;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}

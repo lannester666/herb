@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/all.css" />
+		<link rel="stylesheet" href="/static/css/loginAndRegister.css" />
+		<script src="/static/js/jquery-3.3.1.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+		<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="/static/js/loginAndRegister.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="form row" style="margin-top: 100px;">
+				<form class="form-horizontal col-md-offset-3 col-md-6" id="login-form" method="post" action="/register/">
+                    {% csrf_token %}
+					<div class="panel panel-default col-md-12">
+						<div class="panel-body col-md-10 col-md-offset-1">
+							<div class="page-header">
+								<h3 class="form-title">新用户注册</h3>
+							</div>
+							<div class="form-block col-md-12">
+								<div class="form-group">
+									<input id="username" class="form-control required" type="text" placeholder="电话号码" name="userphone" maxlength="11" onblur="checkPhone()" />
+									<p id="telephoneError" class="errorMessage"></p>
+								</div>
+								<div class="form-group">
+									<input id="password" class="form-control required" type="password" placeholder="密码" name="password" maxlength="50" onblur="checkPassword()" />
+									<p id="passwordError" class="errorMessage"></p>
+								</div>
+								<div class="form-group">
+									<input id="passwordagain" class="form-control required" type="password" placeholder="再次输入密码" name="passwordAgain" maxlength="50" onblur="checkPasswordAgain()" />
+									<p id="passwordAgainError" class="errorMessage"></p>
+								</div>
+                                <div class="form-group">
+									<input id="useremail" class="form-control required" type="text" placeholder="邮箱" name="usermail" maxlength="50" onblur="checkEmail()" />
+									<p id="emailError" class="errorMessage"></p>
+                                </div>
+                                <div class="form-group">
+									<input id="username2" class="form-control required" type="text" placeholder="用户名" name="username" maxlength="50" onblur="checkUsername2()"/>
+									<p id="usernameError" class="errorMessage"></p>
+                                </div>
+								<div class="form-group">
+									<input class="btn btn-primary col-md-4" type="submit" value="注册" />
+								</div>
+								<div class="form-group">
+                                    <button type="button" class="btn btn-link"><a href="/login/">已有账号，去登录</a></button>
+								</div>
+						    </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

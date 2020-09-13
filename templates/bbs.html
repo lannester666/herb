@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://www.w3.org/1999/xhtml" xmlns:g="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>herber</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/all.css"/>
+    <link rel="stylesheet" href="/static/css/index.css"/>
+    <link rel="stylesheet" href="/static/css/bbs.css"/>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/bbs.js"></script>
+    <link rel="shortcut icon" href="/static/assets/images/gt_favicon.png">
+
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+
+    <!-- Custom styles for our template -->
+    <link rel="stylesheet" href="/static/assets/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="/static/assets/css/main.css">
+    <link rel="stylesheet" href="/static/assets/css/contentbox.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/assets/js/html5shiv.js"></script>
+    <script src="/static/assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="home">
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top headroom">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- Button for smallest screens -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="/"><img src="/static/assets/images/logo.png" height="38"
+                                                            alt="Progressus HTML5 template"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="active"><a href="/">主页</a></li>
+                <li><a href="/bbs">论坛</a></li>
+                <li class="dropdown">
+                    <a href="/showplant" class="dropdown-toggle">药材 </a>
+                    <!-- <ul class="dropdown-menu">
+                        <li><a href="sidebar-left.html">Left Sidebar</a></li>
+                        <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+                    </ul> -->
+                </li>
+                <li><a href="contact.html">联系我们</a></li>
+                {#                <li><a class="btn" href="signin.html">登录/ 注册</a></li>#}
+                {% if request.session.is_login %}
+                    <li><a href="/incubator"><img class="head_img" src="/static/img/personInfo/{{ request.session.userimg }}"></a></li>
+                    {% comment %}<div class="userimg-sm">
+                        <a href="/incubator">
+                            <img src="/static/img/personInfo/{{ request.session.userimg }}">
+                        </a>
+                    </div>{% endcomment %}
+                    {#                    <h3 style="margin-left: 100px">{{ request.session.username }}</h3>#}
+                    {% comment %}<button class="btn btn-lg btn-danger" style="margin-top: -60px;margin-left: 100px"
+                            onclick="window.location='/logout/'">注销
+                    </button>{% endcomment %}
+                    <li><a onclick="window.location='/logout/'">注销</a></li>
+                {% endif %}
+                {% if not request.session.is_login %}
+                    {% comment %}<div class="userimg-sm">
+                        <img src="/static/img/wdl.jpg">
+                    </div>
+                    <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">登录</button>{% endcomment %}
+                    <li><a class="btn" href="/signin">登录/ 注册</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+<!-- /.navbar -->
+
+{% comment %}内容开始{% endcomment %}
+<div id="body-container" class="col-md-12 bbs-main">
+			<!--
+            	container 类不可嵌套使用
+            -->
+            <div  class="col-md-offset-1 col-md-3 bbs-left">
+
+            </div>
+			<div class="col-md-7 bbs-right" >
+				<div id="bbs-container" style="margin-top: 10px;margin-left: 10px;">
+					<div id="bbs-header">
+						<ul class="nav navbar-nav nav-tabs" id="bbsTabs">
+							<li class="active">
+                                <a href="#all" data-toggle="tab">全部帖子</a>
+							</li>
+                            <li>
+                                <a href="#selling" data-toggle="tab">药材销售</a>
+							</li>
+                            <li>
+								<a href="#purchase" data-toggle="tab">药材收购</a>
+							</li>
+							<li>
+								<a href="#communication" data-toggle="tab">经验交流</a>
+							</li>
+							<li>
+								<a href="#myPost" data-toggle="tab">我的帖子</a>
+							</li>
+
+							<li>
+								<div>
+									<form class="navbar-form navbar-left" role="search">
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Search" />
+										</div>
+										<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" style="margin-right: 0;"></span></button>
+									</form>
+									<button type="button" class="btn btn-default  navbar-btn" id="edit-button" data-toggle="modal" data-target="#chooseType"><span class="glyphicon glyphicon-pencil" ></span>我要发布</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<br />
+
+					<!--
+                    	作者：1758522370@qq.com
+                    	时间：2018-10-07
+                    	描述：以下是显示的论坛的各个部分
+                    -->
+
+					<div class="modal fade" id="chooseType" tabindex="-1" role="dialog" aria-labelledby="bbsTitle" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="bbsTitle">请选择发布所文章类型</h4>
+								</div>
+								<div class="modal-body bbs-btn-crt">
+                                    <form class="col-md-4" method="get" action="/bbs/writeSelling/">
+                                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-leaf"></span>药材销售信息</button>
+                                    </form>
+                                    <form class="col-md-4" method="get" action="/bbs/writePurchase/">
+                                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-grain"></span>药材收购信息</button>
+                                    </form>
+                                    <form  class="col-md-4" method="get" action="/bbs/writeCommunication/">
+                                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bullhorn"></span>经验交流信息</button>
+                                    </form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr align="left" width="70%" color="white" />
+                    {% if success %}
+                        <div class="alert alert-warning">
+                            <a href="#" class="close" data-dismiss="alert">
+                                &times;
+                            </a>
+                            <strong>抱歉！</strong>帖子走丢了
+                        </div>
+                    {% endif %}
+
+					<div id="bbsTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="all">
+
+						</div>
+                        <div class="tab-pane fade" id="selling">
+                        <div class="list-group">
+                            {% for foo in slist %}
+                               <a href="sellingDetail/{{ foo.sid }}" class="list-group-item">
+                               <h4 class="list-group-item-heading">
+                                   {{ foo.splant }}销售        {{ foo.sprice }} RMB/KG
+                               </h4>
+                               <h6 class="list-group-item-text">
+                                   {{ foo.releasestime }}
+                               </h6>
+                               <p class="list-group-item-text">
+                                   {{ foo.sdescription }}
+                               </p>
+                               </a>
+							{% endfor %}
+                        </div>
+						</div>
+                        <div class="tab-pane fade" id="purchase">
+                            <div class="list-group">
+                                {% for foo in plist %}
+                                    <a href="purchaseDetail/{{ foo.bid }}" class="list-group-item">
+                               <h4 class="list-group-item-heading">
+                                   {{ foo.bplant}}收购        {{ foo.bprice }} RMB/KG
+                               </h4>
+                               <h6 class="list-group-item-text">
+                                   {{ foo.releasebtime }}
+                               </h6>
+                               <p class="list-group-item-text">
+                                   {{ foo.bdescription }}
+                               </p>
+                               </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="communication">
+                            <div class="list-group">
+                                {% for foo in clist %}
+                                    <a href="communicationDetail/{{ foo.cid }}" class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            {{ foo.ctitle }}
+                                        </h4>
+                                        <h6 class="list-group-item-text">
+                                            {{ foo.releasectime }}
+                                        </h6>
+                                        <p class="list-group-item-text">
+                                            {{ foo.cdescription }}
+                                        </p>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+						<div class="tab-pane fade" id="myPost">
+							<p>
+								我的
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% comment %}内容结束{% endcomment %}
+
+<!-- Social links. @TODO: replace by link/instructions in template -->
+<section id="social">
+    <div class="container">
+        <div class="wrapper clearfix">
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_default_style">
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_tweet"></a>
+                <a class="addthis_button_linkedin_counter"></a>
+                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+            </div>
+            <!-- AddThis Button END -->
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="top-space">
+
+    <div class="footer1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3 widget">
+                    <h3 class="widget-title">联系我们</h3>
+                    <div class="widget-body">
+                        <p>+8613021186388<br>
+                            <a href="mailto:#">yangyse@163.com</a><br>
+                            <br>
+                            北京邮电大学新科研楼106
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 widget">
+                    <h3 class="widget-title">联系我们</h3>
+                    <div class="widget-body">
+                        <p>+8613021186388<br>
+                            <a href="mailto:#">yangyse@163.com</a><br>
+                            <br>
+                            北京邮电大学新科研楼106
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 widget">
+                    <h3 class="widget-title">許可</h3>
+                    <div class="widget-body">
+                        <p>镜像:日本 教育网 科技网 呼叫热线：4008-100-300 服务邮箱：kf@people.cn 违法和不良信息举报电话：010-65363263
+                            举报邮箱：jubao@people.cn</p>
+                        <p>互联网新闻信息服务许可证10120170001 | 增值电信业务经营许可证B1-20060139 | 信息网络传播视听节目许可证0104065 |
+                            广播电视节目制作经营许可证（广媒）字第172号 </p>
+                        <p>网络文化经营许可证 京网文[2017]9786-1126号 | 网络出版服务许可证（京）字258号 | 京ICP证000006号 | 京公网安备11000002000008号 </p>
+                    </div>
+                </div>
+
+            </div> <!-- /row of widgets -->
+        </div>
+    </div>
+
+    <div class="footer2">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 widget">
+                    <div class="widget-body">
+                        <p class="simplenav">
+                            <a href="#">主页</a> |
+                            <a href="about.html">关于我们</a> |
+                            <a href="sidebar-right.html">Sidebar</a> |
+                            <a href="contact.html">联系我们</a> |
+                            <b><a href="signup.html">注册</a></b>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 widget">
+                    <div class="widget-body">
+                        <p class="text-right">
+                            Copyright © Zhiyao Development team All rights reserved.
+                        </p>
+                    </div>
+                </div>
+
+            </div> <!-- /row of widgets -->
+        </div>
+    </div>
+
+</footer>
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="/static/assets/js/headroom.min.js"></script>
+<script src="/static/assets/js/jQuery.headroom.min.js"></script>
+<script src="/static/assets/js/template.js"></script>
+<script src="/static/assets/js/nt.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<!--
+	作者：1758522370@qq.com
+	时间：2018-10-06
+	描述：只作为一个框架的模板，并不在真正的页面中显示
+-->
+
+	<head>
+		<meta charset="utf-8">
+		<title>发布收购药材信息</title>
+		<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/all.css" />
+        <link rel="stylesheet" href="/static/css/index.css" />
+		<link rel="stylesheet" href="/static/css/bbs.css" />
+		<script src="/static/js/jquery-3.3.1.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+		<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="/static/js/bbs.js"></script>
+	</head>
+
+	<body>
+		<div class="col-md-12 title-lead row">
+            <ul class="col-md-3">
+                <li><a id="logo" href="/login">智药</a></li>
+                <li class="tile-link" style="margin-left: 80px;"><a href="/login">主页</a></li>
+                <li class="tile-link"><a >产品</a></li>
+                <li class="tile-link"><a href="/bbs">论坛</a></li>
+            </ul>
+            <div class="col-md-1"></div>
+            <div class="col-md-4 top-search">
+                <input type="text" >
+                <button class="btn btn-default">搜索</button>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 top-login">
+                <div class="userimg-sm">
+                   <img src="/static/img/wdl.jpg">
+                </div>
+                <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">登录</button>
+
+            </div>
+        </div>
+		<div id="body-container" class="col-md-12 bbs-main">
+			<!--
+            	container 类不可嵌套使用
+            -->
+            <div class="col-md-offset-1 col-md-3 bbs-left">
+
+
+            </div>
+			<div class="col-md-7 bbs-right">
+				<div style="margin-left:140px;margin-top: 40px;" class="row">
+					<blockquote>
+						<h4>编辑药材收购信息</h4>
+					</blockquote>
+					<div class="col-md-8">
+						<form role="form" method="post" action="save/{{ request.session.userphone }}">
+                            {% csrf_token %}
+							<div class="form-group">
+								<label for="pMedicine">药材名称</label>
+								<input class="form-control" type="text" id="pMedicine" name="pMedicine" placeholder="想要收购什么药材写在这里吧" />
+							</div>
+							<div class="form-group">
+								<label for="pPrice" >定价(RMB/KG)</label>
+								<input class="form-control" type="text" id="pPrice" name="pPrice" placeholder="期望以此价格收购" />
+							</div>
+							<div class="form-group">
+								<label for="pDescribe">描述</label>
+								<textarea  class="form-control" rows="3" id="pDescribe" name="pDescribe" placeholder="对所收购药材的要求"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="pPhone">联系方式</label>
+								<input type="text" class="form-control" id="pPhone" name="pPhone" placeholder="如何通过电话联系到您呢" onblur="checkPPhone()"/>
+								<p id="telephoneError" class="errorMessage"></p>
+							</div>
+							<div class="form-group">
+								<a href="/bbs"><button type="button" class="btn btn-default" class="BBSbutton" style="float: right;margin: 10px;">取消</button></a>
+								<button type="submit" class="btn btn-primary" class="BBSbutton" style="float: right;margin: 10px;">发表</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="bottom-container">
+			<!--
+            	作者：1758522370@qq.com
+            	时间：2018-10-06
+            	描述：可为底部固定信息
+            -->
+		</div>
+
+	</body>
+
+</html>

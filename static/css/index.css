@@ -1,0 +1,140 @@
+.bj{
+    background: url(/static/img/bj2.png);
+    background-size: 100% 100%;
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.title-lead{
+    height: 90px;
+    background: rgba(255,255,255,0.8);
+    margin-left: 0px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-left: 15px;
+    border-bottom: 5px solid brown;
+    box-shadow:5px 5px 2px #888888;
+}
+.title-lead ul{
+    margin-top: 5px;
+}
+.title-lead ul li{
+    float: left;
+    list-style-type: none;
+    margin-left: 40px;
+}
+#title-logo{
+    margin-left: 0px;
+}
+#logo {
+    color: brown;
+    font-size: 35px;
+}
+#logo:hover {
+    color: rosybrown;
+    font-size: 35px;
+}
+.tile-link{
+
+    margin-top:17px;
+}
+.tile-link a{
+    color: brown;
+     font-size: 20px;
+}
+.tile-link a:hover{
+    color: rosybrown;
+     font-size: 20px;
+}
+.top-search{
+
+    margin-top: 22px;
+}
+.top-search input{
+    padding: 10px;
+    float: left;
+    height: 35px;
+    width: 75%;
+    border-radius: 5px 0px 0px 5px;
+}
+.top-search button{
+
+     height: 35px;
+     width: 20%;
+     border-radius: 0px 5px 5px 0px;
+}
+.top-login button{
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 100px;
+}
+
+.userimg-sm{
+    margin-top: 5px;
+    float: left;
+    height:60px;
+    width:60px;
+    border-radius: 35px;
+    overflow: hidden;
+    border: 3px solid rosybrown;
+}
+.userimg-sm:hover{
+    float: left;
+    height:60px;
+    width:60px;
+    border-radius: 35px;
+    overflow: hidden;
+    border: 3px solid rosybrown;
+    box-shadow:3px 3px 3px #888888;
+}
+.userimg-sm img{
+    height: 100%;
+    width: 100%;
+}
+.modal-content-login {
+  position: relative;
+  background-color: transparent;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 0px solid #999;
+  border: 0px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .5);
+          box-shadow: 0 0px 0px rgba(0, 0, 0, .5);
+}
+.page-foot{
+    position: relative;
+    bottom: 0px;
+    padding: 0px;
+    height: 200px;
+
+
+}
+.page-foot-main{
+    background: rgba(255,255,255,0.6);
+    height: 170px;
+}
+.page-foot-main p{
+
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
+
+}
+.page-foot-bottom{
+    position: absolute;
+    bottom: 0px;
+    height: 30px;
+    background-color:rgba(0,0,0,0.8);
+}
+.page-foot-bottom p{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
+    color: white;
+}

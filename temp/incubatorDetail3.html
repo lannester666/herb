@@ -1,0 +1,866 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>incubator details</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/static/css/incubator/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/static/css/switch/normalize.min.css">
+
+
+
+    <link href="/static/css/all.css" rel="stylesheet">
+    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="/static/css/incubator.css" rel="stylesheet">
+    <link href="/static/css/incubator/navbar.css" rel="stylesheet">
+    <script src="/static/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js" type="text/javascript"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/exporting.js" type="text/javascript"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+
+    <noscript>
+        &lt;link rel="stylesheet" href="/static/css/incubator/noscript.css"/&gt;
+    </noscript>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body class="bj" >
+
+<script type="text/javascript">
+    $(function() {
+        var xaixs={{ Mtimes|safe }};
+        console.log("测试time");
+        {#console.log({{ Mtimes }});#}
+        $('#container').highcharts({
+
+    title: {
+        text: '温度'
+    },
+            xAxis:{
+        categories: xaixs
+            },
+    yAxis: {
+        title: {
+            text: 'temperature'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    series: [{
+        name: 'Temp',
+        data: {{ Mtemperatures }}
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+    });
+
+
+</script>
+<script type="text/javascript">
+    $(function() {
+        var xaixs={{ Mtimes|safe }};
+        console.log("测试time");
+        {#console.log({{ Mtimes }});#}
+        $('#container2').highcharts({
+
+    title: {
+        text: '湿度'
+    },
+            xAxis:{
+        categories: xaixs
+            },
+    yAxis: {
+        title: {
+            text: 'humidity'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    series: [{
+        name: 'Hum',
+        data: {{ Mhumiditys }}
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+    });
+
+
+</script>
+<script type="text/javascript">
+    $(function() {
+        var xaixs={{ Mtimes|safe }};
+        console.log("测试time");
+        {#console.log({{ Mtimes }});#}
+        $('#container3').highcharts({
+
+    title: {
+        text: '光照'
+    },
+            xAxis:{
+        categories: xaixs
+            },
+    yAxis: {
+        title: {
+            text: 'lightIntensity'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    series: [{
+        name: 'light',
+        data: {{ MlightIntensitys }}
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+    });
+
+
+</script>
+<script type="text/javascript">
+    $(function() {
+        var xaixs={{ Mtimes|safe }};
+        console.log("测试time");
+        {#console.log({{ Mtimes }});#}
+        $('#container4').highcharts({
+
+    title: {
+        text: '压强'
+    },
+            xAxis:{
+        categories: xaixs
+            },
+    yAxis: {
+        title: {
+            text: 'pressure'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    series: [{
+        name: 'Pressure',
+        data: {{ Mpressures }}
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+    });
+
+
+</script>
+<div class="col-md-12 title-lead row">
+            <ul class="col-md-4">
+                <li id="title-logo"><a id="logo" href="/login">智药</a></li>
+                <li class="tile-link" style="margin-left: 80px;"><a href="/login">主页</a></li>
+                <li class="tile-link"><a >产品</a></li>
+                <li class="tile-link"><a href="/showplant">药材</a></li>
+            </ul>
+
+            <div class="col-md-4 top-search">
+                <input type="text" >
+                <button class="btn btn-default">搜索</button>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 top-login">
+
+
+                {% if request.session.is_login %}
+
+                    <div class="userimg-sm">
+                        <a href="/incubator">
+                        <img src="/static/img/personInfo/{{ request.session.userimg }}">
+                        </a>
+                    </div>
+                        <h3 style="margin-left: 100px">{{ request.session.username }}</h3>
+                        <button class="btn btn-lg btn-danger" style="margin-top: -60px;margin-left: 100px" onclick="window.location='/logout/'">注销</button>
+                {% endif %}
+                {% if not request.session.is_login %}
+                    <div class="userimg-sm">
+                        <img src="/static/img/wdl.jpg">
+                    </div>
+                    <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">登录</button>
+                {% endif %}
+
+            </div>
+        </div>
+{% if IisSucceed and MisSucceed %}
+<div style="margin-left: 50px;margin-right: 50px;width: auto">
+    <div class="col-md-12 box-detail-title">
+    <h1 class="col-md-4">培养箱参数</h1>
+    <button id="cwtj" class="col-md-offset-3 col-md-2 btn btn-info" style="margin-top: 20px; height: 50px" >故障提交</button>
+    <button class="col-md-offset-1 col-md-2 btn btn-info" style="margin-top: 20px; height: 50px" onclick="window.location.href='/oldplantinf'">往期数据详情</button>
+</div>
+    <div id="box-detail" class="col-md-12">
+
+    <div id="main">
+        <div class="col-md-12 container marketing " id="viewChart">
+
+            <!--箱内属性展示  简单表示 -->
+         <div class="row">
+                <div class="col-md-6 "  >
+                    <img style="width:700px;height: 500px" src="/image" id="incubator_img" onload="refreshImg()">
+                    <script>
+            function refreshImg(){
+                setInterval(a,5000);
+            }
+            function a(){
+                document.getElementById('incubator_img').src="/image"+Math.random();
+            }
+
+
+                    </script>
+
+
+                </div>
+
+                <div class="col-md-5 plant-simple-info" >
+                    <div class="plantname" >
+                    <h2 >药材信息</h2>
+                    <div style="overflow:auto; height: 180px">
+                    <a href="#" class="list-group-item">药材种类：甘草</a>
+                    <a href="/test" class="list-group-item">药材生长阶段：开花</a>
+                    <a href="#" class="list-group-item">药材状态：{{ state }} <span class="glyphicon glyphicon-info-sign" style="color:red;"></span></a>
+                    <a href="/howtoplant" class="list-group-item">药材习性：
+                        <div class="planteven">
+                                <p>
+                                    多肉植物喜通风，需要充足的光照，为避免黑腐，宜控水不宜过度浇水。
+                                  </p>
+                        </div>
+                    </a>
+                    </div>
+                    </div>
+
+
+
+                    <div class="plantname" style="margin-top: 0px;" >
+                        <h2>箱体环境：</h2>
+                        <div style="margin-top: 0px;">
+                         <table class="table table-bordered" style="background: white;">
+                              <thead>
+                                <tr>
+                                  <th>箱内环境</th>
+                                  <th>建议环境</th>
+                                  <th>建议</th>
+                                </tr>
+                              </thead>
+
+                        </table>
+                        </div>
+                        <div style="margin-top: -20px;overflow-y:scroll;max-height: 120px">
+                            <table class="table table-bordered" style="background: white;">
+                             <tbody  >
+                                <tr>
+                                  <td>光照：321321 lux</td>
+                                  <td>光照：{{ adviceLight }} lux;</td>
+                                  <td>560001</td>
+                                </tr>
+                                <tr>
+                                  <td>温度：12 ℃;</td>
+                                  <td>温度：{{ adviceTemperature }} ℃;</td>
+                                  <td>400003</td>
+                                </tr>
+                                <tr>
+                                  <td>湿度：40 %;</td>
+                                  <td>湿度：{{ adviceHumidity }} %;</td>
+                                  <td>411027</td>
+                                </tr>
+                                <tr>
+                                    <td>压强：3213Pa;</td>
+                                    <td>压强：{{ advicepressure }}Pa;</td>
+                                    <td>411027</td>
+                                 </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         <h2 class="col-md-12" style="border-bottom: 5px solid brown;border-radius: 2px">传感器状态</h2>
+         <div class="col-md-12 sensor-show">
+             <div class="col-md-7">
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5 style="color: brown">温度传感器</h5>
+                       <h5>{{ Mtemperatures.0 }} ℃</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox"  checked/>
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px" data-toggle="modal" data-target="#temperatures">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5 style="color: brown">湿度传感器</h5>
+                       <h5>{{ Mhumiditys.0 }} %</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" checked/>
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px" data-toggle="modal" data-target="#humiditys">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5 style="color: brown">压强传感器</h5>
+                       <h5>{{ Mpressures.0 }}</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" checked/>
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px" data-toggle="modal" data-target="#pressures">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5 style="color: brown">光照传感器</h5>
+                       <h5>{{ MlightIntensitys.0 }} lux</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" checked/>
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px" data-toggle="modal" data-target="#lightIntensitys">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5>温度传感器</h5>
+                       <h5>温度传感器</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5>温度传感器</h5>
+                       <h5>温度传感器</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5>温度传感器</h5>
+                       <h5>温度传感器</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5>温度传感器</h5>
+                       <h5>温度传感器</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px">详情</button>
+
+
+
+                </div>
+              <div class="col-md-3 sensor-simple-info">
+                   <div class="col-md-12 sensor-now">
+                    <h5>温度传感器</h5>
+                       <h5>温度传感器</h5>
+                  </div>
+                  <div class="col-md-7" >
+                    <label class="switch" >
+                        <input type="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                  </div>
+
+                  <button class="col-md-4 btn btn-default" style="margin-top: 5px">详情</button>
+
+
+
+                </div>
+             </div>
+              <form >
+
+                <div class="table-responsive ">
+                    <table class="table table-striped table-sm ">
+                        <thead>
+                        <tr>
+                            <th>硬件名称</th>
+                            <th>工作状态</th>
+                            <th>工作时间</th>
+                            <th>建议工作时间</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>CPU</td>
+                            <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                            <td>3个月</td>
+                            <td>两年</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>外接显示屏</td>
+                            <td><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td>3个月</td>
+                            <td>两年</td>
+
+                        </tr>
+                        <tr>
+                            <td>湿度传感器</td>
+                            <td><span class="glyphicon glyphicon-remove-sign"></span></td>
+                            <td>3个月</td>
+                            <td>两年</td>
+
+                        </tr>
+                        <tr>
+                            <td>压强传感器</td>
+                            <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                            <td>3个月</td>
+                            <td>两年</td>
+
+                        </tr>
+                        <tr>
+                            <td>温度传感器</td>
+                            <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                            <td>3个月</td>
+                            <td>两年</td>
+
+                        </tr>
+                        <tr>
+                            <td>湿度传感器</td>
+                            <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                            <td>3个月</td>
+                            <td>两年</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </form>
+		</div>
+         <div class="col-md-12">
+            <h2 style="border-bottom: 5px solid brown;border-radius: 2px;margin-top: 20px;margin-bottom: 10px"> 环境自定义 </h2>
+            <form action="/changeEnvironment/{{ request.session.incubatorid }}/" method="post">
+                {% csrf_token %}
+                <div class="table-responsive ">
+                    <table class="table table-striped table-sm ">
+                        <thead>
+                        <tr>
+                            <th>属性</th>
+                            <th>当前值</th>
+                            <th>初始值</th>
+                            <th>建议值</th>
+                            <th>自定义</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>光照强度(lux)</td>
+                            <td>{{ MlightIntensitys.0 }}</td>
+                            <td>{{ IlightIntensity }}</td>
+                            <td>{{ adviceLight }}</td>
+                            <td>
+                                <input name="led_ctl" class="form-control " id="pMedicine "
+                                       style="margin-top=align-content: 20px; " type="text ">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>温度（℃）</td>
+                            <td>{{ Mtemperatures.0 }}</td>
+                            <td>{{ Itemperature }}</td>
+                            <td>{{ adviceTemperature }}</td>
+                            <td>
+                                <input name="tem_ctl" class="form-control " id="pMedicine "
+                                       style="margin-top=align-content: 20px; " type="text ">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>湿度（%）</td>
+                            <td>{{ Mhumiditys.0 }}</td>
+                            <td>{{ Ihumidity }}</td>
+                            <td>{{ adviceHumidity }}</td>
+                            <td>
+                                <input name="hum_ctl" class="form-control " id="pMedicine "
+                                       style="margin-top=align-content: 20px; " type="text ">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>压强（Pa）</td>
+                            <td>{{ Mpressures.0 }}</td>
+                            <td>{{ Ipressure }}</td>
+                            <td>{{ advicepressure }}</td>
+                            <td>
+                                <input name="pre_ctl" class="form-control " id="pMedicine "
+                                       style="margin-top=align-content: 20px; " type="text ">
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <button class="col-md-offset-4 col-md-4 btn btn-primary btn-lg" type="submit">提交修改</button>
+
+            </form>
+
+        </div>
+
+
+
+         </div>
+            <!-- /.row -->
+        </div>
+    <div class="modal fade" id="temperatures" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">培养箱温度具体变动</h4>
+                </div>
+                <div class="modal-body sensor-detail">
+                    <div id="container"></div>
+                    <p>当前温度：{{ Mtemperatures.0 }}</p>
+                    <p>初始温度：{{ Itemperature }}</p>
+                    <p>建议温度：{{ adviceTemperature }}</p>
+                </div>
+                <div class="modal-footer">
+                    <table class="table">
+                      <caption>详细变动表格</caption>
+                      <thead>
+                        <tr>
+                          <th>时间</th>
+                          <th>温度</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Tanmay</td>
+                          <td>Bangalore</td>
+                        </tr>
+                        <tr>
+                          <td>Sachin</td>
+                          <td>Mumbai</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div class="modal fade" id="humiditys" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">培养箱湿度具体变动</h4>
+                </div>
+                <div class="modal-body sensor-detail">
+                    <div id="container2"></div>
+                    <p>当前湿度：{{ Mhumiditys.0 }}</p>
+                    <p>初始湿度：{{ Ihumidity }}</p>
+                    <p>建议湿度：{{ adviceHumidity }}</p>
+                </div>
+                <div class="modal-footer">
+                    <table class="table">
+                      <caption>详细变动表格</caption>
+                      <thead>
+                        <tr>
+                          <th>时间</th>
+                          <th>湿度</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Tanmay</td>
+                          <td>Bangalore</td>
+                        </tr>
+                        <tr>
+                          <td>Sachin</td>
+                          <td>Mumbai</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div class="modal fade" id="pressures" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">培养箱压强具体变动</h4>
+                </div>
+                <div class="modal-body sensor-detail">
+                     <div id="container4"></div>
+                    <p>当前压强：{{ Mpressures.0 }}</p>
+                    <p>初始压强：{{ Ipressure }}</p>
+                    <p>建议压强：{{ advicepressure }}</p>
+                </div>
+                <div class="modal-footer">
+                    <table class="table">
+                      <caption>详细变动表格</caption>
+                      <thead>
+                        <tr>
+                          <th>时间</th>
+                          <th>压强</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Tanmay</td>
+                          <td>Bangalore</td>
+                        </tr>
+                        <tr>
+                          <td>Sachin</td>
+                          <td>Mumbai</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div class="modal fade" id="lightIntensitys" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">培养箱光照具体变动</h4>
+                </div>
+                <div class="modal-body sensor-detail">
+                     <div id="container3"></div>
+                    <p>当前光照：{{ MlightIntensitys.0 }}</p>
+                    <p>初始光照：{{ IlightIntensity }}</p>
+                    <p>建议光照：{{ adviceLight }}</p>
+                </div>
+                <div class="modal-footer">
+                    <table class="table">
+                      <caption>详细变动表格</caption>
+                      <thead>
+                        <tr>
+                          <th>时间</th>
+                          <th>光照</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Tanmay</td>
+                          <td>Bangalore</td>
+                        </tr>
+                        <tr>
+                          <td>Sachin</td>
+                          <td>Mumbai</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    </div>
+</div>
+</div>
+{% endif %}
+{% if not IisSucceed %}
+<div class="alert alert-warning">
+    <a class="close" href="#" data-dismiss="alert">
+        ×
+    </a>
+    <strong>抱歉</strong>这里出了点问题
+</div>
+{% endif %}
+<div class="col-md-12 page-foot">
+        <div class="col-md-12 page-foot-main">
+            <p class="col-md-offset-2 col-md-8"> 镜像:日本  教育网  科技网  呼叫热线：4008-100-300  服务邮箱：kf@people.cn  违法和不良信息举报电话：010-65363263  举报邮箱：jubao@people.cn</p>
+            <p class="col-md-offset-2 col-md-8"> 互联网新闻信息服务许可证10120170001 | 增值电信业务经营许可证B1-20060139 </p>
+            <p class="col-md-offset-2 col-md-8"> 信息网络传播视听节目许可证0104065 | 广播电视节目制作经营许可证（广媒）字第172号 </p>
+            <p class="col-md-offset-2 col-md-8"> 公司地址：花果山福地----水帘洞洞天</p>
+        </div>
+        <div class="col-md-12 page-foot-bottom">
+            <p class="col-md-offset-2 col-md-8">网络文化经营许可证 京网文[2017]9786-1126号 | 网络出版服务许可证（京）字258号 | 京ICP证000006号 | 京公网安备11000002000008号 </p>
+        </div>
+    </div>
+
+
+<script>
+    // 当网页向下滑动 20px 出现"返回顶部" 按钮
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        console.log(121);
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("returnTop").style.display = "block";
+        } else {
+            document.getElementById("returnTop").style.display = "none";
+        }
+    }
+
+    // 点击按钮，返回顶部
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    $("#cwtj").click(function () {
+        alert("您的机器故障已提交，请等待维修人员联系！");
+        window.location.reload();
+    })
+
+</script>
+
+
+</body>
+</html>
