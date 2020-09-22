@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>backend</title>
@@ -225,27 +224,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <td>一月</td>
-                                  <td>Bangalore</td>
-                                  <td>560001</td>
-                                     <td>560001</td>
-                                    <td>560001</td>
-                                </tr>
-                                <tr>
-                                  <td>Sachin</td>
-                                  <td>Mumbai</td>
-                                  <td>400003</td>
-                                     <td>560001</td>
-                                    <td>560001</td>
-                                </tr>
-                                <tr>
-                                  <td>Uma</td>
-                                  <td>Pune</td>
-                                  <td>411027</td>
-                                     <td>560001</td>
-                                    <td>560001</td>
-                                </tr>
+
                               </tbody>
                             </table>
                     </div>
@@ -253,6 +232,7 @@
                         <h4>用户培养箱情况</h4>
                         <table class="table table-bordered">
                               <thead>
+
                                 <tr>
                                   <th>培养箱编号</th>
                                   <th>运行状态</th>
@@ -261,24 +241,14 @@
                                 </tr>
                               </thead>
                               <tbody>
+                              {%  for inc in incubator1 %}
                                 <tr>
-                                  <td>一月</td>
-                                  <td>Bangalore</td>
-                                  <td>560001</td>
-                                     <td>560001</td>
+                                  <td>{{inc.incuno}}</td>
+                                  <td>{{inc.managerstate}}</td>
+                                  <td>{{inc.purchasetime}}</td>
+                                     <td>{{inc.usetime}}</td>
                                 </tr>
-                                <tr>
-                                  <td>Sachin</td>
-                                  <td>Mumbai</td>
-                                  <td>400003</td>
-                                     <td>560001</td>
-                                </tr>
-                                <tr>
-                                  <td>Uma</td>
-                                  <td>Pune</td>
-                                  <td>411027</td>
-                                     <td>560001</td>
-                                </tr>
+                              {% endfor %}
                               </tbody>
                             </table>
                     </div>

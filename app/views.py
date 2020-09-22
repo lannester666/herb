@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from app import models
 from app.models import Incubatorusing
 from app.models import Monitorinform
-
+from app.models import Incubator
 # 作图
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -14,6 +14,8 @@ import json
 # Create your views here.
 
 from . import predict
+
+
 
 
 # 注释掉的内容为解决错误的另一种方法
@@ -134,6 +136,7 @@ def register(request):
                     return redirect('/login/')
     return render(request, '../temp/register.html')
 
+
 # 用户登录
 def signin(request):
     return render(request, 'signin.html')
@@ -185,10 +188,23 @@ def getIncubator(userid):
     # 获取用户所有正在使用的培养箱
 
 
+def getIncubator_(request):
+    incubator1 = models.Incubator.objects.all()
+    for inc in incubator1:
+        print(inc)
+    context = {
+        'incubator1': incubator1,
+    }
+    return render(request, 'Backend.html', context)
+
+
 def incubator(request):
-    userphone = request.session['userphone']
+   # userphone = request.session['userphone']
     # get是获取单个对象，filte是设置筛选条件
-    incubators = models.Incubator.objects.filter(user_userid=userphone)
+    # incubators = models.Incubator.objects.filter(user_userid=userphone)
+
+
+    incubators = models.Incubator.objects.all()
     incuName = []
     incuID = []
     incu = []
@@ -384,7 +400,11 @@ def backendlogin(request):
 
 
 def backend(request):
-    return render(request, 'Backend.html')
+    incubator1 = models.Incubator.objects.all()
+    context = {
+        'incubator1': incubator1,
+    }
+    return render(request, 'Backend.html', context)
 
 
 def plantinf_old(request):
